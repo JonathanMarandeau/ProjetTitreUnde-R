@@ -1,0 +1,9 @@
+body{
+    font-family: 'Gugi', cursive;
+}
+/* image de bg */
+.imgBgInscription{
+    background-image: url('../images/clip.jpg');
+    max-height: 100%;
+    max-width: 100%;
+}

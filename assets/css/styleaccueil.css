@@ -1,0 +1,45 @@
+/*Image de background accueil du site */
+.welcomeImg{
+  background-image: url('../images/studio_bg.jpg');
+  height: auto;
+  max-width: 100%;
+}
+/*Nom du site */
+.siteTitle{
+  text-align: center;
+  color: white;
+  padding-top: 200px;
+  font-family: 'Gugi', cursive;
+}
+/*Slogan*/
+.slogan{
+  padding-top: 50px;
+}
+/* Bouttons de connexion */
+.btn-connection{
+  padding-top: 150px;
+}
+.btn{
+  color: white;
+  border: 2px solid white;
+}
+.btn:hover{
+  background-color: white;
+  color: blue;
+  border-color: white;
+}
+/*Droit reservé */
+.rightReserved{
+  color: white;
+  padding-top: 100px;
+}
+/* Modal */
+.modal-dialog{
+    background-color: white;
+}
+.modal-content{
+    background-color: black;
+}
+.btn-connect-modal{
+    background-color: black;
+}
