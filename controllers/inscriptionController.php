@@ -2,10 +2,19 @@
 // J'instancie un nouvel objet $user comme classe user
 $user = new user();
 
-//Création des regex pour controler les données rentré dans le formulaire
+// J'instancie un nouvel objet $country comme classe country (pour la liste des pays)
+$country = new country();
+    // J'appel la méthode getListCountry dans un objet country
+    $getListCountry = $country->getListCountry();
+
+// Création des regex pour controler les données rentré dans le formulaire
+// Regex pour le nom et le prénom
 $regexName = '/^[a-zA-Zàáâãäåçèéêëìíîïðòóôõöùúûüýÿ-]+$/';
+// Regex pour l'email
 $regexEmail = '/^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/';
+// Regex pour le numéro de téléphone
 $regexPhoneNumber = '/^[0-9]{10,10}$/';
+// Regex pour le pseudo de l'utilisateur
 $regexPseudo = '/^[a-zA-Z0-9_]{3,30}$/';
 
 //Création d'un tableau pour retranscrire les erreurs lord du remplissage du formulaire

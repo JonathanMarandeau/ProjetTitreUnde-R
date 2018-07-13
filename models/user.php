@@ -9,8 +9,8 @@ class user extends database {
     public $mail = '';
     public $phone = '0606060606';
     public $password = '';
-    public $idCategory = '';
-    public $idCountry = '';
+    public $idCategory = 0;
+    public $idCountry = 0;
     
     // Je crée la méthode magique __construct pour se connecter à la base de donnée mySQL
     public function __construct() {
