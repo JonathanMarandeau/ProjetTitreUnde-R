@@ -1,6 +1,6 @@
 <?php
 
-class user extends database {
+class apqm_user extends database {
     // J'initialise mes variables d'input qui seront rempli par l'utilisateur
     public $id = 0;
     public $lastname = '';

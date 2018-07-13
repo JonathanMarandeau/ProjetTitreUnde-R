@@ -1,6 +1,8 @@
 <?php
 include 'models/database.php';
 include 'models/user.php';
+include 'models/category.php';
+include 'models/country.php';
 include 'controllers/inscriptionController.php';
 ?>
 <!DOCTYPE html>
@@ -72,30 +74,33 @@ include 'controllers/inscriptionController.php';
                     <!-- STATUS -->
                     <div class="form-row">                            
                         <div class="form-group col-lg-12 text-center">
-                            <div class="titleStatus"><label for="idCategory">Tu es ici pour :</label></div>
-                            <select class="status" name="idCategory">
+                            <div class="titleStatus"><label for="choiceCategory">Tu es ici pour :</label></div>
+                            <select class="status" name="choiceCategory">
                                 <option selected disabled>Choix</option>
-                                <option value="1">Beatmk'R</option>
-                                <option value="2">Certif'R</option>
-                                <option value="3">Product'R</option>
-                                <option value="4">Rapp'R</option>
-                                <option value="5">Shoot'R</option>
+                                <!-- Boucle qui va lire le tableau d'objet créé pour la liste des types d'utilisateurs --> 
+                                <?php foreach ($getListCategory AS $listCategory) { ?>
+                                <!-- Je récupère dans la value l'id du type de category -->
+                                <!-- Dans la balise option j'affiche le nom du type de category -->
+                                <option value="<?= $listCategory->id ?>"><?= $listCategory->name ?></option>
+                                <?php } ?>
                             </select>
-                            <p><?= isset($formError['idCategory']) ? $formError['idCategory'] : '' ?></p>
+                            <p><?= isset($formError['choiceCategory']) ? $formError['choiceCategory'] : '' ?></p>
                         </div>
                     </div>
                     <!-- PAYS --> 
                     <div class="form-row">
                         <div class="form-group col-lg-12 text-center">  
-                            <div class="titleCountry"><label for="idCountry">Ton pays :</label></div>
-                            <select class="country" name="idCountry">
+                            <div class="titleCountry"><label for="choiceCountry">Ton pays :</label></div>
+                            <select class="country" name="choiceCountry">
                                 <option selected disabled>Choix</option>
-                                <option value="1">Belgique</option>
-                                <option value="2">France</option>
-                                <option value="3">Luxembourg</option>
-                                <option value="4">Suisse</option>                                   
+                                <!-- Boucle qui va lire le tableau d'objet créé pour la liste des pays --> 
+                                <?php foreach ($getListCountry AS $listCountry) { ?>
+                                <!-- Je récupère dans la value l'id du pays -->
+                                <!-- Dans la balise option j'affiche le nom du pays -->
+                                <option value="<?= $listCountry->id ?>"><?= $listCountry->name ?></option>
+                                <?php } ?>
                             </select>
-                            <p><?= isset($formError['idCountry']) ? $formError['idCountry'] : '' ?></p>
+                            <p><?= isset($formError['choiceCountry']) ? $formError['choiceCountry'] : '' ?></p>
                         </div>                       
                     </div>
                 </div>

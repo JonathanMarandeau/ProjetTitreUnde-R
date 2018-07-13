@@ -1,11 +1,16 @@
 <?php
 // J'instancie un nouvel objet $user comme classe user
-$user = new user();
+$user = new apqm_user();
+
+// J'instancie un nouvel objet $category comme classe category (pour la liste des types d'utilisateurs)
+$category = new apqm_category();
+// Je crée un tableau $getListCategory via la méthode getListTypesUser()
+$getListCategory = $category->getListTypesUser();
 
 // J'instancie un nouvel objet $country comme classe country (pour la liste des pays)
-$country = new country();
-    // J'appel la méthode getListCountry dans un objet country
-    $getListCountry = $country->getListCountry();
+$country = new apqm_country();
+// Je crée un tableau $getListCountry via la méthode getListCountry()
+$getListCountry = $country->getListCountry();
 
 // Création des regex pour controler les données rentré dans le formulaire
 // Regex pour le nom et le prénom
@@ -91,22 +96,30 @@ if (isset($_POST['phone'])){
         $formError['phone'] = 'Champs obligatoire';
     }
 }
-//Profil sur le site 
-if (isset($_POST['idCategory'])){
-    // Tableau associatif
-    $statusArray = array(1 => 'Beatmk\'R', 2 => 'Certif\'R', 3 => 'Product\'R', 4 => 'Rapp\'R', 5 => 'Shoot\'R');
-    $user->idCategory = $statusArray[$_POST['idCategory']];
-    if ($user->idCategory == NULL){
-        $formError['idCategory'] = 'Sélection obligatoire';
-    } 
-}
-//Pays
-if (isset($_POST['idCountry'])){
-    $countryArray = array(1 => 'Belgique', 2 => 'France', 3 => 'Luxembourg', 4 => 'Suisse');
-    $user->idCountry = $countryArray[$_POST['idCountry']];
-    if ($user->idCountry == NULL){
-        $formError['idCountry'] = 'Sélection obligatoire';
+//PROFIL SUR LE SITE (TYPE D'UTILISATEUR) 
+// Si le post existe alors
+if (isset($_POST['choiceCategory'])) {
+    $user->idCategory = $_POST['choiceCategory'];
+    // Je vérifie que l'on récupère bien l'id du type d'utilisateur pour ne rien afficher d'autre (protection)
+    if (is_nan($user->idCategory)) {
+        $formError['choiceCategory'] = '*Sélectionne uniquement un type d\'utilisateur de la liste';
     }
+    // Si on envoi le formulaire et que la clé n'existe pas dans le post (pas selectionné le type d'utilisateur) j'affiche un message
+    } else if (isset($_POST['sendForm']) && !array_key_exists('choiceCountry', $_POST)) {
+        $formError['choiceCategory'] = '*Sélectionné un type d\'utilisateur';
+}
+
+// PAYS
+// Si le post existe alors
+if (isset($_POST['choiceCountry'])) {
+    $user->idCountry = $_POST['choiceCountry'];
+    // Je vérifie que l'on récupère bien l'id du pays pour ne rien afficher d'autre (protection)
+    if (is_nan($user->idCountry)) {
+        $formError['choiceCountry'] = '*Sélectionne uniquement un pays de la liste';
+    }
+    // Si on envoi le formulaire et que la clé n'existe pas dans le post (pas selectionné le pays) j'affiche un message
+    } else if (isset($_POST['sendForm']) && !array_key_exists('choiceCountry', $_POST)) {
+        $formError['choiceCountry'] = '*Sélectionne un pays';
 }
 
 // Je vérifie que j'ai crée une entrée submit dans l'array $_POST, si présent on éxécute la méthode addUser()

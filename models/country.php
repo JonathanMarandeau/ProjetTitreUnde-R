@@ -1,6 +1,6 @@
 <?php
 
-class country extends database {
+class apqm_country extends database {
     // J'initialise mes variables de la table country qui seront choisit par l'utilisateur
     public $id = 0;
     public $name = '';
@@ -21,7 +21,7 @@ class country extends database {
          */
         $query = 'SELECT `id`, `name` FROM `apqm_country` ORDER BY `name`';
         // J'insère ma requête dans une variable en récupérant les attributs du parent
-        $listCountry = $this->database->prepare($query);
+        $listCountry = $this->database->query($query);
         /*
          * Je crée une variable qui va me permettre de retourner le résultat.
          * La fonction fetchAll permet d'afficher toutes les données de la requête dans un tableau d'objet.
