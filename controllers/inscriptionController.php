@@ -28,8 +28,8 @@ $formError = array();
 // Variable addSuccess qui affichera un message si le formulaire est bien envoyé
 $addSuccess = false;
 
-//Nom
-//Si le post est rempli alors
+// NOM
+// Si le post est rempli alors
 if (isset($_POST['lastname'])){
     // Variable lastname qui vérifie que les caractères speciaux soit converti en entité html (protection)
     $user->lastname = htmlspecialchars($_POST['lastname']);
@@ -44,7 +44,7 @@ if (isset($_POST['lastname'])){
         $formError['lastname'] = '*Champs obligatoire';
     }          
 }
-//Prénom
+// PRENOM
 // Si le post est rempli alors
 if (isset($_POST['firstname'])){
     // Variable firstname qui vérifie que les caractères speciaux soit converti en entité html (protection)
@@ -75,18 +75,18 @@ if (isset($_POST['userName'])){
         $formError['userName'] = '*Champs obligatoire';
     }          
 }
-//Password
-if (isset($_POST['password'])){
-    $user->password = $_POST['password'];
-    if (empty($user->password)){
+
+// PASSWORD
+if (isset($_POST['password']) && empty($_POST['password'])){
         $formError['password'] = '*Champs obligatoire';
-    }
 }
-// Confirmation de Password
-if (isset($_POST['confirmPassword']) && !empty($_POST['confirmPassword'])){
+
+// CONFIRMATION DE PASSWORD
+if (isset($_POST['confirmPassword']) && empty($_POST['confirmPassword'])){
         // J'affiche le message d'erreur
         $formError['confirmPassword'] = '*Champs obligatoire';
     }
+    
 // COMPARAISON PASSWORD ET HASCHAGE
 if (!empty($_POST['password']) && !empty($_POST['confirmPassword'])){
     // Je vérifie que le password soit stritement égale au confimrPassword
@@ -98,20 +98,23 @@ if (!empty($_POST['password']) && !empty($_POST['confirmPassword'])){
         $formError['confirmPassword'] = 'Tes mots de passe ne sont pas identiques';
     }
 }
-//E-mail
+
+//E-MAIL
 if (isset($_POST['mail'])){
     $user->mail = $_POST['mail'];
     if (empty($user->mail)){
         $formError['mail'] = '*Champs obligatoire';
     }
 }
-//Télephone
+
+//TELEPHONE
 if (isset($_POST['phone'])){
     $user->phone = $_POST['phone'];
     if (empty($user->phone)){
         $formError['phone'] = '*Champs obligatoire';
     }
 }
+
 //PROFIL SUR LE SITE (TYPE D'UTILISATEUR) 
 // Si le post existe alors
 if (isset($_POST['choiceCategory'])) {
