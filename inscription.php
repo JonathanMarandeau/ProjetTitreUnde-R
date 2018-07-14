@@ -26,49 +26,56 @@ include 'controllers/inscriptionController.php';
                     <!-- Si le formulaire a bien été envoyé, on le notifie a l'utilisateur -->
                     <?php
                     if ($addSuccess) {
-                        echo 'Formulaire envoyé';
+                        echo 'L\'inscription sur unde\'R a été réalisé avec succès';
                     }
                     ?>
                     <div class="form-row">                           
                         <div class="form-group col-lg-12 text-center">
                             <!-- La partie php permet de garder sur le formulaire ce qui a été rentré par l'utilisateur-->
                             <input type="text" name="lastname" id="lastname" placeholder="Ton nom" value="<?= isset($lastname) ? $lastname : '' ?>" />
-                            <p><?= isset($formError['lastname']) ? $formError['lastname'] : '' ?></p>
+                            <p class="text-danger"><?= isset($formError['lastname']) ? $formError['lastname'] : '' ?></p>
                         </div>
                     </div>
                     <!-- PRENOM -->
                     <div class="form-row">                           
                         <div class="form-group col-lg-12 text-center">
                             <input type="text" name="firstname" id="firstname" placeholder="Ton prénom" value="<?= isset($firstname) ? $firstname : '' ?>" />
-                            <p><?= isset($formError['firstname']) ? $formError['firstname'] : '' ?></p>
+                            <p class="text-danger"><?= isset($formError['firstname']) ? $formError['firstname'] : '' ?></p>
                         </div>
                     </div> 
                     <!-- PSEUDO -->
                     <div class="form-row">                           
                         <div class="form-group col-lg-12 text-center">
                             <input type="text" name="userName" id="userName" placeholder="Ton pseudo" value="<?= isset($userName) ? $userName : '' ?>" />
-                            <p><?= isset($formError['userName']) ? $formError['userName'] : '' ?></p>
+                            <p class="text-danger"><?= isset($formError['userName']) ? $formError['userName'] : '' ?></p>
                         </div>
                     </div>
                     <!-- MOT DE PASSE -->
                     <div class="form-row">                           
                         <div class="form-group col-lg-12 text-center">
                             <input type="password" name="password" id="password" placeholder="Ton mot de passe" value="" />
-                            <p><?= isset($formError['password']) ? $formError['password'] : '' ?></p>
+                            <p class="text-danger"><?= isset($formError['password']) ? $formError['password'] : '' ?></p>
+                        </div>
+                    </div>
+                    <!-- VERIFICATION DU MOT DE PASSE -->
+                    <div class="form-row">                           
+                        <div class="form-group col-lg-12 text-center">
+                            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirme ton mot de passe" value="" />
+                            <p class="text-danger"><?= isset($formError['confirmPassword']) ? $formError['confirmPassword'] : '' ?></p>
                         </div>
                     </div>
                     <!-- EMAIL -->
                     <div class="form-row">                           
                         <div class="form-group col-lg-12 text-center">
                             <input type="email" name="mail" placeholder="Ton email" value="<?= isset($mail) ? $mail : '' ?>" />
-                            <p><?= isset($formError['mail']) ? $formError['mail'] : '' ?></p>
+                            <p class="text-danger"><?= isset($formError['mail']) ? $formError['mail'] : '' ?></p>
                         </div>
                     </div>
                     <!-- TELEPHONE -->
                     <div class="form-row">                           
                         <div class="form-group col-lg-12 text-center">                               
                             <input type="tel" name="phone" placeholder="Ton numéro de télephone" value="<?= isset($phone) ? $phone : '' ?>"  />
-                            <p><?= isset($formError['phone']) ? $formError['phone'] : '' ?></p> 
+                            <p class="text-danger"><?= isset($formError['phone']) ? $formError['phone'] : '' ?></p> 
                         </div>                           
                     </div> 
                     <!-- STATUS -->
@@ -84,7 +91,7 @@ include 'controllers/inscriptionController.php';
                                 <option value="<?= $listCategory->id ?>"><?= $listCategory->name ?></option>
                                 <?php } ?>
                             </select>
-                            <p><?= isset($formError['choiceCategory']) ? $formError['choiceCategory'] : '' ?></p>
+                            <p class="text-danger"><?= isset($formError['choiceCategory']) ? $formError['choiceCategory'] : '' ?></p>
                         </div>
                     </div>
                     <!-- PAYS --> 
@@ -100,7 +107,7 @@ include 'controllers/inscriptionController.php';
                                 <option value="<?= $listCountry->id ?>"><?= $listCountry->name ?></option>
                                 <?php } ?>
                             </select>
-                            <p><?= isset($formError['choiceCountry']) ? $formError['choiceCountry'] : '' ?></p>
+                            <p class="text-danger"><?= isset($formError['choiceCountry']) ? $formError['choiceCountry'] : '' ?></p>
                         </div>                       
                     </div>
                 </div>

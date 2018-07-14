@@ -36,12 +36,12 @@ if (isset($_POST['lastname'])){
     // Si la variable lastname ne correspond pas à la regex
     if (!preg_match($regexName, $user->lastname)){
         // J'affiche l'erreur 
-        $formError['lastname'] = 'Ton nom ne doit contenir que des lettres';
+        $formError['lastname'] = '*Ton nom ne doit contenir que des lettres';
    }
    // Si le post lastname n'est pas rempli (donc vide)
     if (empty($user->lastname)){
         // J'affiche l'erreur 
-        $formError['lastname'] = 'Champs obligatoire';
+        $formError['lastname'] = '*Champs obligatoire';
     }          
 }
 //Prénom
@@ -52,12 +52,12 @@ if (isset($_POST['firstname'])){
     // Si la variable firstname ne correspond pas à la regex
     if (!preg_match($regexName, $user->firstname)){
         // J'affiche l'erreur
-        $formError['firstname'] = 'Ton prénom ne doit contenir que des lettres';
+        $formError['firstname'] = '*Ton prénom ne doit contenir que des lettres';
    }
    // Si le post est vide
     if (empty($user->firstname)){
         // J'affiche le message d'erreur
-        $formError['firstname'] = 'Champs obligatoire';
+        $formError['firstname'] = '*Champs obligatoire';
     }          
 }
 // UserName
@@ -67,33 +67,49 @@ if (isset($_POST['userName'])){
     // Si la variable lastname ne correspond pas à la regex
     if (!preg_match($regexPseudo, $user->userName)){
         // J'affiche l'erreur 
-        $formError['userName'] = 'Ton pseudo n\'est pas valide !';
+        $formError['userName'] = '*Ton pseudo n\'est pas valide !';
    }
    // Si le post lastname n'est pas rempli (donc vide)
     if (empty($user->userName)){
         // J'affiche l'erreur 
-        $formError['userName'] = 'Champs obligatoire';
+        $formError['userName'] = '*Champs obligatoire';
     }          
 }
 //Password
 if (isset($_POST['password'])){
     $user->password = $_POST['password'];
     if (empty($user->password)){
-        $formError['password'] = 'Champs obligatoire';
+        $formError['password'] = '*Champs obligatoire';
+    }
+}
+// Confirmation de Password
+if (isset($_POST['confirmPassword']) && !empty($_POST['confirmPassword'])){
+        // J'affiche le message d'erreur
+        $formError['confirmPassword'] = '*Champs obligatoire';
+    }
+// COMPARAISON PASSWORD ET HASCHAGE
+if (!empty($_POST['password']) && !empty($_POST['confirmPassword'])){
+    // Je vérifie que le password soit stritement égale au confimrPassword
+    if ($_POST['password'] === $_POST['confirmPassword']){
+        // Si cela correspond on hash le password (crypte)
+        $user->password = password_hash($_POST['confirmPassword'], PASSWORD_DEFAULT);
+    } else {
+        // Sinon j'affiche un message d'erreur
+        $formError['confirmPassword'] = 'Tes mots de passe ne sont pas identiques';
     }
 }
 //E-mail
 if (isset($_POST['mail'])){
     $user->mail = $_POST['mail'];
     if (empty($user->mail)){
-        $formError['mail'] = 'Champs obligatoire';
+        $formError['mail'] = '*Champs obligatoire';
     }
 }
 //Télephone
 if (isset($_POST['phone'])){
     $user->phone = $_POST['phone'];
     if (empty($user->phone)){
-        $formError['phone'] = 'Champs obligatoire';
+        $formError['phone'] = '*Champs obligatoire';
     }
 }
 //PROFIL SUR LE SITE (TYPE D'UTILISATEUR) 
