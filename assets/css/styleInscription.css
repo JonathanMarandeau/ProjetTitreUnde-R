@@ -1,9 +1,23 @@
 body{
     font-family: 'Gugi', cursive;
-}
-/* image de bg */
-.imgBgInscription{
     background-image: url('../images/clip.jpg');
-    max-height: 100%;
-    max-width: 100%;
+}
+.row{
+    padding: 0.5rem;
+}
+.card{
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+h1{
+    font-size: 4rem;
+}
+.descriptionForm{
+    font-size: 1.5rem;
+}
+.textSucces1{
+    font-size: 3.5rem;
+}
+.textSucces2{
+    font-size: 2rem;
 }

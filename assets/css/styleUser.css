@@ -1,0 +1,12 @@
+body {
+    font-family: 'Gugi', cursive;
+    background-image: url('../images/microphone.jpg');
+    height: auto;
+}
+.navbar, .presentation, .jumbotron{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+
+
+

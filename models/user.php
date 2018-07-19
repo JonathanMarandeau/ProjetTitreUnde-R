@@ -7,7 +7,7 @@ class apqm_user extends database {
     public $firstname = '';
     public $userName = '';
     public $mail = '';
-    public $phone = '0606060606';
+    public $phone = '';
     public $password = '';
     public $idCategory = 0;
     public $idCountry = 0;
