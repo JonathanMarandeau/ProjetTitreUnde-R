@@ -11,7 +11,13 @@
     <body>
         <div class="container">
             <div class="row">
-                <a href="resumeUnder.php" class="justify-content-end">Qu'est-ce qu'Unde'R ?</a>
+                <div class="col-lg-10">
+                    <a href="resumeUnder.php"><img src="assets/images/iconsResume/question-mark.png" alt="point d'interogation" class="linkResume" /></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href=""><img src="assets/images/iconsResume/iconFacebook.png" alt="icon Facebook" class="linkResume" /></a>
+                    <a href=""><img src="assets/images/iconsResume/iconTwitter.png" alt="icon Twitter" class="linkResume" /></a>
+                </div>
             </div>
             <div class="siteTitle">
                 <h1>UNDE'R</h1>
@@ -21,7 +27,7 @@
                 <div class="text-center btn-connection">
                     <!-- Boutton pour ouvrir la fenetre modal -->
                     <button type="button" class="btn btn-outline-primary btn-connect btn-lg" data-toggle="modal" data-target="#modalConnect">Connection</button>
-                    <a class="btn btn-outline-primary btn-firstVisit btn-lg" href="inscription.php" title="Créer un compte" role="button">Inscrivez-vous</a>
+                    <a class="btn btn-outline-primary btn-firstVisit btn-lg" href="register.php" title="Créer un compte" role="button">Inscris Toi</a>
                 </div>
                 <!-- Fenetre modale -->
                 <!-- Contenue du modal -->
@@ -50,14 +56,13 @@
                     </div>
                 </div>
                 <!-- Fin du modal -->
-            </div>
-            <div class="text-center">
-                <div class="rightReserved">
-                    <p>&copy; 2018. UNDE'R. All rights reserved.</p>
-                </div>
-            </div>
+            </div>            
         </div>
-
+        <footer>
+            <div class="jumbotron text-center">
+                <p class="text-white">&copy; 2018. UNDE'R. All rights reserved.</p>
+            </div>
+        </footer>
         <script src="javascriptAccueil.js"></script> 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

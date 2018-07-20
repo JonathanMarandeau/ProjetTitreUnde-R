@@ -3,7 +3,12 @@ body{
     background-image: url('../images/studio_bg.jpg');
     height: auto;
 }
-/*Nom du site */
+/* LinkResume */
+.linkResume{
+    width: 2rem;
+    margin: 1rem;
+}
+/* Nom du site */
 .siteTitle{
     text-align: center;
     color: white;
@@ -27,10 +32,15 @@ body{
     color: blue;
     border-color: white;
 }
-/*Droit reservé */
-.rightReserved{
-    color: white;
-    padding-top: 100px;
+/* Footer */
+footer{
+    margin-top: 4.3rem;
+}
+.jumbotron{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    margin-bottom:0; 
+    margin-top:2rem;
 }
 /* Modal */
 .modal-dialog{

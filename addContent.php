@@ -45,10 +45,10 @@
                     <p>Instagram</p>
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="user.php">Mon Profil</a>
+                            <a class="nav-link" href="user.php">Mon Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="addContent.php">Ajoute du contenu</a>
+                            <a class="nav-link active" href="addContent.php">Ajoute du contenu</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="updateProfil.php">Modifier mon compte</a>
@@ -84,4 +84,5 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
     </body>
 </html>
+
 

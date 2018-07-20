@@ -3,10 +3,30 @@ body {
     background-image: url('../images/microphone.jpg');
     height: auto;
 }
-.navbar, .presentation, .jumbotron{
+.navbar, .presentation, .jumbotron, .card{
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
 }
-
+.container{
+    margin-top:5rem;
+}
+.jumbotron{
+    margin-bottom:0;
+    margin-top:2rem;
+}
+.updateFormUser{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+.btnUpdateForm{
+    background-color: black;
+    color: #ffcc00;
+    border: black;
+}
+.btnUpdateForm:hover{
+    background-color: #ffcc00;
+    color: black;
+    border: black;
+}
 
 

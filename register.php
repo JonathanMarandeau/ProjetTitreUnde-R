@@ -17,13 +17,13 @@ include 'controllers/inscriptionController.php';
     </head>
     <body>
         <!-- Création du formulaire d'inscription -->
-        <form action="inscriptionTestFormBg.php" method="POST">
+        <form action="register.php" method="POST">
             <h1 class="text-center">UNDE'R</h1>
             <p class="text-center descriptionForm">Inscrivez-vous pour voir le contenu des artistes</p>
             <div class="container">
                 <!-- Si le formulaire a bien été envoyé, on le notifie a l'utilisateur -->
                 <?php if ($addSuccess) { ?>
-                    <div class="card text-white bg-success mb-3" style="max-width: 150rem;">
+                    <div class="card text-white bg-success mb-3 registerGood">
                         <div class="card-body text-center">
                             <p class="card-text textSucces1"><strong>Super !</strong></p>
                             <p class="textSucces2">Tu fais maintenant parti de l'équipe !</p>
