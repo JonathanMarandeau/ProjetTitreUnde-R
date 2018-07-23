@@ -1,3 +1,9 @@
+<?php
+session_start();
+include 'models/database.php';
+include 'models/user.php';
+include 'controllers/acceuilConnexion.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -8,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet" />
         <link rel="stylesheet" href="assets/css/styleaccueil.css" />
     </head>
-    <body>
+    <body>       
         <div class="container">
             <div class="row">
                 <div class="col-lg-10">
@@ -31,30 +37,33 @@
                 </div>
                 <!-- Fenetre modale -->
                 <!-- Contenue du modal -->
-                <div class="modal fade" id="modalConnect" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Connectez-Toi</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                <form action="accueil.php" method="POST">
+                    <div class="modal fade" id="modalConnect" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Connecte-Toi</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="siteNameModal">UNDE'R</p>
+                                    <p><input type="text" name="userName" placeholder="Ton pseudo"></p>
+                                    <p><input type="password" name="password" placeholder="Mot de passe"></p>
+                                    <p><?= isset($formError['connexion']) ? $formError['connexion'] : '' ?></p>
+                                </div>
+                                <div class="passwordLost">
+                                    <a href="#">Mot de passe oublié ?</a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-connect-modal" name="btnCloseModal" data-dismiss="modal">Fermer</button>
+                                    <button type="submit" class="btn btn-secondary btn-connect-modal" name="btnConnexion">Connection</button>                                    
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <p class="siteNameModal">UNDE'R</p>
-                                <p><input type="text" name="idConnection" placeholder="Ton pseudo"></p>
-                                <p><input type="password" name="passwordConnection" placeholder="Mot de passe"></p>
-                            </div>
-                            <div class="passwordLost">
-                                <a href="#">Mot de passe oublié ?</a>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-secondary btn-connect-modal" data-dismiss="modal" href="#">Connection</button>
-                            </div>
-
                         </div>
                     </div>
-                </div>
+                </form>
                 <!-- Fin du modal -->
             </div>            
         </div>

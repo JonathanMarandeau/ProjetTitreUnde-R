@@ -9,8 +9,8 @@ class apqm_user extends database {
     public $mail = '';
     public $phone = '';
     public $password = '';
-    public $idCategory = 0;
-    public $idCountry = 0;
+    public $id_apqm_category = 0;
+    public $id_apqm_country = 0;
     
     // Je crée la méthode magique __construct pour se connecter à la base de donnée mySQL
     public function __construct() {
@@ -56,7 +56,7 @@ class apqm_user extends database {
         // Variable pour avoir un résultat de requête en boolean initialisé a false
         $queryGood = false;
         // Mise en place de la requête
-        $query = 'SELECT `id`,`lastname`, `firstname`,`userName`, `mail`, `phone`,`password`, `id_apqm_category`, `id_apqm_country FROM `apqm_user` WHERE `userName` = :userName';
+        $query = 'SELECT `id`,`lastname`, `firstname`,`userName`, `mail`, `phone`,`password`, `id_apqm_category`, `id_apqm_country` FROM `apqm_user` WHERE `userName` = :userName';
         // J'insert ma requête dans une variable en récupérant les attributs du parent
         $getUser = $this->database->prepare($query);
         // J'attribue les valeurs via bindValue et je récupère les attributs de la classe via $this

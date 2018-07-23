@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -35,7 +38,7 @@
             <div class="row">
                 <div class="col-sm-4 presentation">
                     <div class="avatar">Mettre LAVATAR</div>
-                    <h2>Mettre le PSEUDO</h2>
+                    <h2><?= $_SESSION['userName'] ?> </h2>
                     <p>Mettre le type: beatmk'R ...</p>
                     <p>Mettre une phrase de présentation</p>
                     <h3>Liens des réseaux de la personne</h3>

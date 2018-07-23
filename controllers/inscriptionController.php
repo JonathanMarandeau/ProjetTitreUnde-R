@@ -22,7 +22,7 @@ $regexPhoneNumber = '/^[0-9]{10,10}$/';
 // Regex pour le pseudo de l'utilisateur
 $regexPseudo = '/^[a-zA-Z0-9_]{3,30}$/';
 
-//Création d'un tableau pour retranscrire les erreurs lord du remplissage du formulaire
+// Création d'un tableau pour retranscrire les erreurs lord du remplissage du formulaire
 $formError = array();
 
 // Variable addSuccess qui affichera un message si le formulaire est bien envoyé
@@ -69,7 +69,7 @@ if (isset($_POST['userName'])){
         // J'affiche l'erreur 
         $formError['userName'] = '*Ton pseudo n\'est pas valide !';
    }
-   // Si le post lastname n'est pas rempli (donc vide)
+   // Si le post userName n'est pas rempli (donc vide)
     if (empty($user->userName)){
         // J'affiche l'erreur 
         $formError['userName'] = '*Champs obligatoire';
