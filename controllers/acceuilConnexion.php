@@ -13,8 +13,9 @@ if (isset($_POST['btnConnexion'])) {
     } else {
         // Je compare le mot de passe envoyé via le $_POST avec celui stocké dans la base via un password_verify (Mdp crypté dans la base)
         $passwordCorrect = password_verify($_POST['password'], $user->password);
-        if ($passwordCorrect) {
+        if ($passwordCorrect) {            
             $_SESSION['userName'] = $user->userName;
+            $_SESSION['nameCategory'] = $user->nameCategory;
             header("Location: http://projetTitre/user.php");
         } else {
             $formError['connexion'] = 'Ton pseudo ou mot de passe n\'est pas correct !';

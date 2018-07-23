@@ -38,8 +38,8 @@ session_start();
             <div class="row">
                 <div class="col-sm-4 presentation">
                     <div class="avatar">Mettre LAVATAR</div>
-                    <h2><?= $_SESSION['userName'] ?> </h2>
-                    <p>Mettre le type: beatmk'R ...</p>
+                    <h2><?= $_SESSION['userName'] ?></h2>
+                    <p><?= $_SESSION['nameCategory'] ?></p>
                     <p>Mettre une phrase de présentation</p>
                     <h3>Liens des réseaux de la personne</h3>
                     <p>YouTube</p>

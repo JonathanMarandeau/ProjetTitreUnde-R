@@ -56,7 +56,11 @@ class apqm_user extends database {
         // Variable pour avoir un résultat de requête en boolean initialisé a false
         $queryGood = false;
         // Mise en place de la requête
-        $query = 'SELECT `id`,`lastname`, `firstname`,`userName`, `mail`, `phone`,`password`, `id_apqm_category`, `id_apqm_country` FROM `apqm_user` WHERE `userName` = :userName';
+        $query = 'SELECT `apqm_user`.`id`, `apqm_user`.`lastname`, `apqm_user`.`firstname`, `apqm_user`.`userName` AS `userName`, `apqm_user`.`mail`, `apqm_user`.`phone`, `apqm_user`.`password`, `apqm_user`.`id_apqm_category`, `apqm_user`.`id_apqm_country`, `apqm_category`.`name` AS `nameCategory`'
+                 .'FROM `apqm_user` '
+                 . 'LEFT JOIN `apqm_category` '
+                 . 'ON `apqm_user`.`id_apqm_category` = `apqm_category`.`id`'
+                 . ' WHERE `apqm_user`.`userName` = :userName';
         // J'insert ma requête dans une variable en récupérant les attributs du parent
         $getUser = $this->database->prepare($query);
         // J'attribue les valeurs via bindValue et je récupère les attributs de la classe via $this
@@ -76,7 +80,7 @@ class apqm_user extends database {
                 $this->phone = $user->phone;
                 $this->password = $user->password;
                 $this->id_apqm_category = $user->id_apqm_category;
-                $this->id_apqm_country = $user->id_apqm_country;
+                $this->nameCategory = $user->nameCategory;
                 // Si l'hydratation est bonne on retourne la variable $queryGood en true
                 $queryGood = true;
             }
