@@ -101,7 +101,7 @@ class apqm_user extends database {
      */
     public function updateUserByUserName(){
         // Requête pour permettre à l'utilisateur de modifier ses données
-        $query = 'UPDATE `apqm_user` SET `lastname` = :lastname, `firstname` = :firstname, `userName` = :userName, `mail` = :mail, `phone` = :phone, `id_apqm_country` = :idCountry, `id_apqm_category` = :idCategory'
+        $query = 'UPDATE `apqm_user` SET `lastname` = :lastname, `firstname` = :firstname, `userName` = :userName, `mail` = :mail, `phone` = :phone, `id_apqm_country` = :idCountry, `id_apqm_category` = :idCategory '
                  . 'WHERE `userName` = :userName';
         // J'insert ma requête dans une variable en récupérant les attributs du parent
         $updateUser = $this->database->prepare($query);
