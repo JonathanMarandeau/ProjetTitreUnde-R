@@ -44,7 +44,7 @@ include 'controllers/updateProfilController.php';
             <!-- Si le formulaire a bien été envoyé, je le notifie a l'utilisateur -->
             <?php if ($updateSuccess) { ?>
             <p>Modifications effectuées !</p>    
-            <?php } ?>
+            <?php } else { ?>
             <form action="updateProfil.php" method="POST">                
                 <div class="inscriptionForm">
                     <div class="container">
@@ -85,7 +85,8 @@ include 'controllers/updateProfilController.php';
                                                 <?php foreach ($getListCountry AS $listCountry) { ?>
                                                 <!-- Je récupère dans la value l'id du pays -->
                                                 <!-- Dans la balise option j'affiche le nom du pays -->
-                                                <option value="<?= $listCountry->id ?>"><?= $listCountry->name ?></option>
+                                                <!-- ternaire pour afficher le pays de l'utilisateur -->
+                                                <option value="<?= $listCountry->id ?>" <?= $listCountry->id == $user->id_apqm_country ? 'selected' : '' ?>><?= $listCountry->name ?></option>
                                                 <?php } ?>
                                             </select>
                                             <p class="text-danger"><?= isset($formError['choiceCountry']) ? $formError['choiceCountry'] : '' ?></p>
@@ -111,7 +112,8 @@ include 'controllers/updateProfilController.php';
                                                 <?php foreach ($getListCategory AS $listCategory) { ?>
                                                 <!-- Je récupère dans la value l'id du type de category -->
                                                 <!-- Dans la balise option j'affiche le nom du type de category -->
-                                                <option value="<?= $listCategory->id ?>"><?= $listCategory->name ?></option>
+                                                <!-- ternaire pour afficher la category de l'utilisateur -->
+                                                <option value="<?= $listCategory->id ?>" <?= $listCategory->id == $user->id_apqm_category ? 'selected' : '' ?>><?= $listCategory->name ?></option>
                                                 <?php } ?>
                                             </select>
                                             <p class="text-danger"><?= isset($formError['choiceCategory']) ? $formError['choiceCategory'] : '' ?></p>
@@ -127,6 +129,7 @@ include 'controllers/updateProfilController.php';
                     </div>                     
                 </div>
             </form>
+            <?php } ?>
         </div>
         <footer>
             <div class="jumbotron text-center">
