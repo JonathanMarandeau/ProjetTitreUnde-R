@@ -29,7 +29,8 @@ class apqm_user extends database {
          * avec un INSERT INTO et le nom des champs de la table.
          * Récupération des valeurs des variables rentré par l'utlisateur via les marqueurs nominatifs 
          */ 
-        $query = 'INSERT INTO `apqm_user` (`lastname`, `firstname`, `userName`, `mail`, `phone`, `password`, `id_apqm_category`, `id_apqm_country`) VALUES (:lastname, :firstname, :userName, :mail, :phone, :password, :idCategory, :idCountry)';
+        $query = 'INSERT INTO `apqm_user` (`lastname`, `firstname`, `userName`, `mail`, `phone`, `password`, `id_apqm_category`, `id_apqm_country`) '
+                 . 'VALUES (:lastname, :firstname, :userName, :mail, :phone, :password, :idCategory, :idCountry)';
         // J'insert ma requête dans une variable en récupérant les attributs du parent
         $addUserOnSite = $this->database->prepare($query);
         // J'attribue les valeurs via bindValue et je récupère les attributs de la classe via $this
@@ -53,13 +54,15 @@ class apqm_user extends database {
      *  @return Boolean
      */
     public function getUserByUserName() {
-        // Variable pour avoir un résultat de requête en boolean initialisé a false
+        // Variable pour avoir un résultat de requête en boolean initialisé à false
         $queryGood = false;
         // Mise en place de la requête
-        $query = 'SELECT `apqm_user`.`id`, `apqm_user`.`lastname`, `apqm_user`.`firstname`, `apqm_user`.`userName` AS `userName`, `apqm_user`.`mail`, `apqm_user`.`phone`, `apqm_user`.`password`, `apqm_user`.`id_apqm_category`, `apqm_user`.`id_apqm_country`, `apqm_category`.`name` AS `nameCategory`'
+        $query = 'SELECT `apqm_user`.`id`, `apqm_user`.`lastname`, `apqm_user`.`firstname`, `apqm_user`.`userName` AS `userName`, `apqm_user`.`mail`, `apqm_user`.`phone`, `apqm_user`.`password`, `apqm_user`.`id_apqm_category`, `apqm_user`.`id_apqm_country`, `apqm_category`.`name` AS `nameCategory`, `apqm_country`.`name` AS `nameCountry`'
                  .'FROM `apqm_user` '
-                 . 'LEFT JOIN `apqm_category` '
+                 . 'LEFT JOIN `apqm_category`'
                  . 'ON `apqm_user`.`id_apqm_category` = `apqm_category`.`id`'
+                 . 'LEFT JOIN `apqm_country`'
+                 . 'ON `apqm_user`.`id_apqm_country` = `apqm_country`.`id`'
                  . ' WHERE `apqm_user`.`userName` = :userName';
         // J'insert ma requête dans une variable en récupérant les attributs du parent
         $getUser = $this->database->prepare($query);
@@ -80,17 +83,44 @@ class apqm_user extends database {
                 $this->phone = $user->phone;
                 $this->password = $user->password;
                 $this->id_apqm_category = $user->id_apqm_category;
-                $this->nameCategory = $user->nameCategory;                
+                $this->nameCategory = $user->nameCategory;
+                $this->id_apqm_country = $user->id_apqm_country;
+                $this->nameCountry = $user->nameCountry;                
                 // Si l'hydratation est bonne on retourne la variable $queryGood en true
                 $queryGood = true;
             }
         }
         return $queryGood;
     }
-    
-    
-    
-    
+            
+       
+       
+    /**
+     *  MODIFICATION D'UN UTILISATEUR
+     *  Méthode qui va permettre de modifier les données de l'utilisateur grâce au userName
+     */
+    public function updateUserByUserName(){
+        // Requête pour permettre à l'utilisateur de modifier ses données
+        $query = 'UPDATE `apqm_user` SET `lastname` = :lastname, `firstname` = :firstname, `userName` = :userName, `mail` = :mail, `phone` = :phone, `id_apqm_country` = :idCountry, `id_apqm_category` = :idCategory'
+                 . 'WHERE `userName` = :userName';
+        // J'insert ma requête dans une variable en récupérant les attributs du parent
+        $updateUser = $this->database->prepare($query);
+        // J'attribue les valeurs via bindValue et je récupère les attributs de la classe via $this
+        $updateUser->bindValue(':lastname', $this->lastname, PDO::PARAM_STR);
+        $updateUser->bindValue(':firstname', $this->firstname, PDO::PARAM_STR);
+        $updateUser->bindValue(':userName', $this->userName, PDO::PARAM_STR);
+        $updateUser->bindValue(':mail', $this->mail, PDO::PARAM_STR);
+        $updateUser->bindValue(':phone', $this->phone, PDO::PARAM_STR);
+        $updateUser->bindValue(':idCountry', $this->idCountry, PDO::PARAM_INT);
+        $updateUser->bindValue(':idCategory', $this->idCategory, PDO::PARAM_INT);
+        return $updateUser->execute();
+    }
+
+
+
+
+
+
     // Je crée la méthode magique __destruct() pour se déconnecter à la base de donnée mySQL
     public function __destruct() {
         // On appelle le destruct du parent

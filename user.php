@@ -37,10 +37,10 @@ session_start();
         <div class="container text-white" style="margin-top:5rem;">
             <div class="row">
                 <div class="col-sm-4 presentation">
-                    <div class="avatar">Mettre LAVATAR</div>
+                    <div class="avatar">Mettre LAVATAR</div>                    
                     <h2><?= $_SESSION['userName'] ?></h2>
-                    <p><?= $_SESSION['nameCategory'] ?></p>
-                    <p>Mettre une phrase de présentation</p>
+                    <h3><?= $_SESSION['nameCategory'] ?></h3>
+                    <p><?= $_SESSION['nameCountry'] ?></p>
                     <h3>Liens des réseaux de la personne</h3>
                     <p>YouTube</p>
                     <p>Facebook</p>

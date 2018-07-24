@@ -1,5 +1,10 @@
 <?php
 session_start();
+include 'models/database.php';
+include 'models/user.php';
+include 'models/category.php';
+include 'models/country.php';
+include 'controllers/updateProfilController.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,8 +40,12 @@ session_start();
             </nav>
         </header>
         <div class="container text-white">
-            <h1 class="text-center">Modifie ton compte</h1>            
-            <form action="action" method="POST">
+            <h1 class="text-center">Modifie ton compte</h1> 
+            <!-- Si le formulaire a bien été envoyé, je le notifie a l'utilisateur -->
+            <?php if ($updateSuccess) { ?>
+            <p>Modifications effectuées !</p>    
+            <?php } ?>
+            <form action="updateProfil.php" method="POST">                
                 <div class="inscriptionForm">
                     <div class="container">
                         <div class="card">
@@ -47,22 +56,22 @@ session_start();
                                         <!-- NOM -->
                                         <div class="row">                                           
                                             <!-- La partie php permet de garder sur le formulaire ce qui a été rentré par l'utilisateur-->
-                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="lastname" id="lastname" placeholder="Ton nom" value="<?= isset($user->lastname) ? $user->lastname : '' ?>" />
+                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="lastname" id="lastname" placeholder="Ton nom" value="<?= $user->lastname ?>" />
                                             <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['lastname']) ? $formError['lastname'] : '' ?></p>
                                         </div>
                                         <!-- PRENOM -->
                                         <div class="row">
-                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="firstname" id="firstname" placeholder="Ton prénom" value="<?= isset($user->firstname) ? $user->firstname : '' ?>" />
+                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="firstname" id="firstname" placeholder="Ton prénom" value="<?= $user->firstname ?>" />
                                             <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['firstname']) ? $formError['firstname'] : '' ?></p>
                                         </div>
                                         <!-- EMAIL -->
                                         <div class="row">
-                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="email" name="mail" placeholder="Ton email" value="<?= isset($user->mail) ? $user->mail : '' ?>" />
+                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="email" name="mail" placeholder="Ton email" value="<?= $user->mail ?>" />
                                             <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['mail']) ? $formError['mail'] : '' ?></p>
                                         </div>
                                         <!-- TELEPHONE -->
                                         <div class="row">
-                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="tel" name="phone" placeholder="Ton phone" value="<?= isset($user->phone) ? $user->phone : '' ?>"  />
+                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="tel" name="phone" placeholder="Ton phone" value="<?= $user->phone ?>"  />
                                             <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['phone']) ? $formError['phone'] : '' ?></p>
                                         </div>
                                         <!-- PAYS -->
@@ -74,9 +83,9 @@ session_start();
                                                 <option selected disabled>Choix</option>
                                                 <!-- Boucle qui va lire le tableau d'objet créé pour la liste des pays --> 
                                                 <?php foreach ($getListCountry AS $listCountry) { ?>
-                                                    <!-- Je récupère dans la value l'id du pays -->
-                                                    <!-- Dans la balise option j'affiche le nom du pays -->
-                                                    <option value="<?= $listCountry->id ?>"><?= $listCountry->name ?></option>
+                                                <!-- Je récupère dans la value l'id du pays -->
+                                                <!-- Dans la balise option j'affiche le nom du pays -->
+                                                <option value="<?= $listCountry->id ?>"><?= $listCountry->name ?></option>
                                                 <?php } ?>
                                             </select>
                                             <p class="text-danger"><?= isset($formError['choiceCountry']) ? $formError['choiceCountry'] : '' ?></p>
@@ -88,18 +97,8 @@ session_start();
                                         <div class="h1 mt-0 title">Identifiant</div>
                                         <!-- PSEUDO -->
                                         <div class="row">
-                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="userName" id="userName" placeholder="Ton pseudo" value="<?= isset($user->userName) ? $user->userName : '' ?>" />
+                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="userName" id="userName" placeholder="Ton pseudo" value="<?= $user->userName ?>" />
                                             <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['userName']) ? $formError['userName'] : '' ?></p>
-                                        </div>
-                                        <!-- MOT DE PASSE -->
-                                        <div class="row">
-                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="password" name="password" id="password" placeholder="Ton mot de passe" value="" />
-                                            <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['password']) ? $formError['password'] : '' ?></p>
-                                        </div>
-                                        <!-- VERIFICATION DU MOT DE PASSE -->
-                                        <div class="row">
-                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="password" name="confirmPassword" id="confirmPassword" placeholder="Valide le" value="" />
-                                            <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['confirmPassword']) ? $formError['confirmPassword'] : '' ?></p>
                                         </div>
                                         <!-- STATUS -->
                                         <div class="row col-lg-6 offset-lg-4">
@@ -110,9 +109,9 @@ session_start();
                                                 <option selected disabled>Choix</option>
                                                 <!-- Boucle qui va lire le tableau d'objet créé pour la liste des types d'utilisateurs --> 
                                                 <?php foreach ($getListCategory AS $listCategory) { ?>
-                                                    <!-- Je récupère dans la value l'id du type de category -->
-                                                    <!-- Dans la balise option j'affiche le nom du type de category -->
-                                                    <option value="<?= $listCategory->id ?>"><?= $listCategory->name ?></option>
+                                                <!-- Je récupère dans la value l'id du type de category -->
+                                                <!-- Dans la balise option j'affiche le nom du type de category -->
+                                                <option value="<?= $listCategory->id ?>"><?= $listCategory->name ?></option>
                                                 <?php } ?>
                                             </select>
                                             <p class="text-danger"><?= isset($formError['choiceCategory']) ? $formError['choiceCategory'] : '' ?></p>
