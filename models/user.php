@@ -40,7 +40,7 @@ class apqm_user extends database {
         $addUserOnSite->bindValue(':phone', $this->phone, PDO::PARAM_STR);
         $addUserOnSite->bindValue(':password', $this->password, PDO::PARAM_STR);
         $addUserOnSite->bindValue(':idCategory', $this->idCategory, PDO::PARAM_INT);
-        $addUserOnSite->bindValue(':idCountry', $this->idCountry, PDO::PARAM_INT);
+        $addUserOnSite->bindValue(':idCountry', $this->idCountry, PDO::PARAM_INT);        
         // J'utilise la méthode execute() via un return
         return $addUserOnSite->execute();
     }
@@ -80,7 +80,7 @@ class apqm_user extends database {
                 $this->phone = $user->phone;
                 $this->password = $user->password;
                 $this->id_apqm_category = $user->id_apqm_category;
-                $this->nameCategory = $user->nameCategory;
+                $this->nameCategory = $user->nameCategory;                
                 // Si l'hydratation est bonne on retourne la variable $queryGood en true
                 $queryGood = true;
             }

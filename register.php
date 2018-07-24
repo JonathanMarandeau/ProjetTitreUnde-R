@@ -118,7 +118,7 @@ include 'controllers/inscriptionController.php';
                                             <p class="text-danger"><?= isset($formError['choiceCategory']) ? $formError['choiceCategory'] : '' ?></p>
                                         </div>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                             <div class="text-center buttonSend">
                                 <input class="btn btn-dark" type="submit" name="sendForm" value="Valider" title="Valide ton inscription" />

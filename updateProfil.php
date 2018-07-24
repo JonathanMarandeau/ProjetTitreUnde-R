@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -118,7 +118,7 @@ session_start();
                                             <p class="text-danger"><?= isset($formError['choiceCategory']) ? $formError['choiceCategory'] : '' ?></p>
                                         </div>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                             <div class="text-center buttonSend">
                                 <input class="btn btnUpdateForm" type="submit" name="sendUpdateForm" value="Modifier" title="Valide tes modifications" />
