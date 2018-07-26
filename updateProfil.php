@@ -126,45 +126,45 @@ include 'controllers/updateProfilController.php';
                                     <input class="btn btnUpdateForm" type="submit" name="sendUpdateForm" value="Modifier" title="Valide tes modifications" />
                                     <a class="btn btnUpdateForm" href="user.php" title="Retourne à ton profil" role="button">Retour</a>
                                 </div>
+                                <!-- Modal de confirmation de suppression (intégré au form pour garder la valeur du POST) -->
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Supprimer <?= $_SESSION['userName'] ?></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Es-tu sûr de vouloir supprimer ton compte ?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a type="button" class="btn btnDeleteAccount" name="submitDeleteAccount" href="deleteConfirm.php?id=<?= $user->id ?>">Supprimer</a>
+                                                <button type="button" class="btn btnUpdateForm" data-dismiss="modal">Retour</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>                      
                         </div>                     
                     </div>
                 </form>
-            <?php } ?>
-            <div class="container">
-                <h1 class="text-center">Suppression de ton compte</h1>
-                <div class="card">
-                    <div class="row">
-                        <div class="card-body text-center">
-                            <p>Je ne vois pas ce que tu viens faire ici, mais si tu as réelement perdu la tête, tu peu supprimer ton compte définitivement !</p>                                    
-                        </div>                                
-                    </div> 
-                    <div class="text-center">
-                        <input class="btn btnDeleteAccount" data-toggle="modal" data-target="#exampleModalCenter" type="submit" name="submitDeleteAccount" value="Supprimer" title="Tu fais une erreur" />
-                        <a class="btn btnUpdateForm" href="user.php" title="Sage décision" role="button">Retour</a>
-                    </div>                                             
-                </div>
-                <!-- Modal de confirmation de suppression -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Supprimer <?= $_SESSION['userName'] ?></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Es-tu sûr de vouloir supprimer ton compte ?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btnDeleteAccount">Supprimer</button>
-                                <button type="button" class="btn btnUpdateForm" data-dismiss="modal">Retour</button>
-                            </div>
-                        </div>
+                <div class="container">
+                    <h1 class="text-center">Suppression de ton compte</h1>
+                    <div class="card">
+                        <div class="row">
+                            <div class="card-body text-center">
+                                <p>Je ne vois pas ce que tu viens faire ici, mais si tu as réelement perdu la tête, tu peu supprimer ton compte définitivement !</p>                                    
+                            </div>                                
+                        </div> 
+                        <div class="text-center">
+                            <input class="btn btnDeleteAccount" data-toggle="modal" data-target="#exampleModalCenter" type="submit" name="deleteAccount" value="Supprimer" title="Tu fais une erreur" />
+                            <a class="btn btnUpdateForm" href="user.php" title="Sage décision" role="button">Retour</a>
+                        </div>                                             
                     </div>
                 </div>
-            </div>
+            <?php } ?>
         </div>
         <footer>
             <div class="jumbotron text-center">

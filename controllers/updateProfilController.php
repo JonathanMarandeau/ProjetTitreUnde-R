@@ -22,8 +22,9 @@ $getListCountry = $country->getListCountry();
 // Création d'un tableau pour retranscrire les erreurs lord du remplissage du formulaire
 $formError = array();
 
-// Variable updateSuccess qui affichera un message si le formulaire est bien envoyé (initialisé a false)
+// Variable updateSuccess qui affichera un message si le formulaire est bien envoyé (initialisé à false)
 $updateSuccess = false;
+
 
 // Création des regex pour controler les données rentré dans le formulaire
 // Regex pour le nom et le prénom
@@ -127,12 +128,14 @@ if (isset($_POST['choiceCountry'])) {
         $formError['choiceCountry'] = '*Sélectionne un pays';
 }
 
-// Je vérifie que j'ai crée une entrée submit dans l'array $_POST, si présent on éxécute la méthode updateUserByUserName()
+// Je vérifie que j'ai crée une entrée submit dans l'array $_POST, si présent on éxécute la méthode updateUserByUserId()
   if (count($formError) == 0 && isset($_POST['sendUpdateForm'])){
-    if (!$user->updateUserByUserName()){
-        $formError['sendUpdateForm'] = 'l\'envoie du formulaire à échoué';
+    if (!$user->updateUserByUserId()){
+        $formError['sendUpdateForm'] = 'L\'envoie du formulaire à échoué';
     } else {
         $updateSuccess = true;
     }
 }
+
+
 
