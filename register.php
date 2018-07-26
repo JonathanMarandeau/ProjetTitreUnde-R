@@ -43,7 +43,7 @@ include 'controllers/inscriptionController.php';
                             <div class="row">
                                 <div class="col-lg-6 col-md-12">
                                     <div class="card-body text-center">
-                                        <div class="h1 mt-0 title">Informations</div>
+                                        <div class="h1 mt-0 title"><p>Informations</p></div>
                                         <!-- NOM -->
                                         <div class="row">                                           
                                             <!-- La partie php permet de garder sur le formulaire ce qui a été rentré par l'utilisateur-->

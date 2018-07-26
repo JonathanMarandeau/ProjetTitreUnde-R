@@ -51,7 +51,7 @@ include 'controllers/acceuilConnexion.php';
                                     <p class="siteNameModal">UNDE'R</p>
                                     <p><input type="text" name="userName" placeholder="Ton pseudo"></p>
                                     <p><input type="password" name="password" placeholder="Mot de passe"></p>
-                                    <p><?= isset($formError['connexion']) ? $formError['connexion'] : '' ?></p>
+                                    <p class="text-danger"><?= isset($formError['connexion']) ? $formError['connexion'] : '' ?></p>
                                 </div>
                                 <div class="passwordLost">
                                     <a href="#">Mot de passe oublié ?</a>

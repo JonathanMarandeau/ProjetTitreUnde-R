@@ -21,14 +21,14 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2 text-dark" type="search" placeholder="Recherche un artiste">
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">GO !</button>
+                        <button class="btn btnSearch my-2 my-sm-0" type="submit">GO !</button>
                     </form>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Actualité</a>
                         </li>   
                         <li class="nav-item">
-                            <button class="nav-link btn btn-danger text-white" href="#">Déconnexion</button>
+                            <a class="nav-link btn btnDeconnect" type="button" href="logout.php">Déconnexion</a>
                         </li>
                     </ul>
                 </div>
