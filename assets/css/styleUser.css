@@ -71,3 +71,12 @@ body {
 .close:hover{
     color: red;
 }
+.nav-link-user{
+    color: #ffcc00;
+}
+.nav-link-user:hover{
+    color: white;
+}
+.nav-pills .nav-link.active{
+    background-color: #ffcc00;
+}

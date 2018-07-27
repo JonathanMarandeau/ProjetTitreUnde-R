@@ -48,13 +48,13 @@ session_start();
                     <p>Instagram</p>
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="user.php">Mon Profil</a>
+                            <a class="nav-link active nav-link-user" href="user.php">Mon Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="addContent.php">Ajoute du contenu</a>
+                            <a class="nav-link nav-link-user" href="addContent.php">Ajoute du contenu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="updateProfil.php">Modifier mon compte</a>
+                            <a class="nav-link nav-link-user" href="updateProfil.php">Modifier mon compte</a>
                         </li>                        
                     </ul>
                     <hr class="d-sm-none">
