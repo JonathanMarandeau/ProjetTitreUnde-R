@@ -1,12 +1,15 @@
-<?php 
+<?php
 session_start();
+include 'models/database.php';
+include 'models/contentType.php';
+include 'controllers/addContentController.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title></title>
+        <title>Ajouter du contenu</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet" />
         <link rel="stylesheet" href="assets/css/styleUser.css" />
@@ -38,9 +41,9 @@ session_start();
             <div class="row">
                 <div class="col-sm-4 presentation">
                     <div class="avatar">Mettre LAVATAR</div>
-                    <h2>Mettre le PSEUDO</h2>
-                    <p>Mettre le type: beatmk'R ...</p>
-                    <p>Mettre une phrase de présentation</p>
+                    <h2><?= $_SESSION['userName'] ?></h2>
+                    <h3><?= $_SESSION['nameCategory'] ?></h3>
+                    <p><?= $_SESSION['nameCountry'] ?></p>
                     <h3>Liens des réseaux de la personne</h3>
                     <p>YouTube</p>
                     <p>Facebook</p>
@@ -60,20 +63,48 @@ session_start();
                     <hr class="d-sm-none">
                 </div>
                 <div class="col-sm-8">
+                    <!-- Début du formulaire d'ajout de contenu -->
+                    <h1 class="text-center">Ajoute un contenu</h1>
                     <div class="publication presentation">
-                        <h2>TITRE DU CONTENU</h2>
-                        <h5>Date de publication, modifié le:</h5>
-                        <div class="content">le CONTENU</div>
-                        <p>Texte d'explication</p>
-                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                    </div>
-                    <div class="publication presentation">
-                        <h2>TITRE DU CONTENU</h2>
-                        <h5>Date de publication, modifié le:</h5>
-                        <div class="content">le CONTENU</div>
-                        <p>Texte d'explication</p>
-                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                    </div>
+                        <form action="action" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <label for="selectContentType" class="offset-lg-3 col-lg-6">Type de contenu :</label>
+                            </div>
+                            <div class="row">
+                                <select class="contentType offset-lg-3 col-lg-6" name="selectContentType">
+                                    <option selected disabled>Choix</option>
+                                    <!-- Boucle qui va lire le tableau d'objet créé pour la liste des pays --> 
+                                    <?php foreach ($getListContentType AS $listContentType) { ?>
+                                        <!-- Je récupère dans la value l'id du pays -->
+                                        <!-- Dans la balise option j'affiche le nom du pays -->
+                                        <option value="<?= $listContentType->id ?>"><?= $listContentType->name ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <label for="titleContent" class="offset-lg-3 col-lg-6">Titre :</label>
+                            </div>
+                            <div class="row">
+                                <input class="offset-lg-3 col-lg-6" type="text" name="titleContent" placeholder="Titre de ton contenu" />
+                            </div>
+                            <!-- Si c'est un audio ou video -->
+                            <div class="row">
+                                <label for="file" class="offset-lg-3 col-lg-6">Ton fichier :</label>
+                            </div>
+                            <div class="row">
+                                <input type="file" class="offset-lg-3 col-lg-6" name="file" value="" />
+                            </div>
+                            <!-- Si c'est un texte -->
+                            <div class="row">
+                                <label for="contentText" class="offset-lg-3 col-lg-6">Ton Texte :</label>
+                            </div>
+                            <div class="row">
+                                <textarea rows="4" class="offset-lg-3 col-lg-6">
+                                At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+                                </textarea>
+                            </div>
+                        </form>
+                    </div                    
                 </div>
             </div>
         </div>

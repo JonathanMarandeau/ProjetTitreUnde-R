@@ -3,80 +3,80 @@ body {
     background-image: url('../images/microphone.jpg');
     height: auto;
 }
-.navbar, .presentation, .jumbotron, .card{
+.navbar, .presentation, .jumbotron, .card {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
 }
-.container{
+.container {
     margin-top:5rem;
 }
-.jumbotron{
+.jumbotron {
     margin-bottom:0;
     margin-top:2rem;
 }
-.updateFormUser{
+.updateFormUser {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
 }
-.btnUpdateForm{
+.btnUpdateForm {
     background-color: black;
     color: #ffcc00;
     border-color: #ffcc00;
 }
-.btnUpdateForm:hover{
+.btnUpdateForm:hover {
     background-color: #ffcc00;
     color: black;
     border-color: black;
 }
-.buttonReturn{
+.buttonReturn {
     padding: 1rem;
 }
-.btnDeleteAccount{
+.btnDeleteAccount {
     background-color: #ff0000;
     color: white;
     border-color: white;
 }
-.btnDeleteAccount:hover{
+.btnDeleteAccount:hover {
     background-color: white;
     color: #ff0000;
     border-color: #ff0000;
 }
-.btnDeconnect{
+.btnDeconnect {
     background-color: #ff0000;
     color: white;
     border-color: white;
 }
-.btnDeconnect:hover{
+.btnDeconnect:hover {
     background-color: white;
     color: #ff0000;
     border-color: #ff0000;
 }
-.btnSearch{
+.btnSearch {
     background-color: black;
     color: #ffcc00;
     border-color: #ffcc00;
 }
-.btnSearch:hover{
+.btnSearch:hover {
     background-color: #ffcc00;
     color: black;
     border-color: black;
 }
-.modal-content{
+.modal-content {
     background-color: rgba(0, 0, 0, 0.9);
     border-color: white;
 }
-.close{
+.close {
     color: white;
 }
-.close:hover{
+.close:hover {
     color: red;
 }
-.nav-link-user{
+.nav-link-user {
     color: #ffcc00;
 }
-.nav-link-user:hover{
+.nav-link-user:hover {
     color: white;
 }
-.nav-pills .nav-link.active{
+.nav-pills .nav-link.active {
     background-color: #ffcc00;
 }

@@ -1,26 +1,26 @@
-body{
+body {
     font-family: 'Gugi', cursive;
     background-image: url('../images/clip.jpg');
 }
-.row{
+.row {
     padding: 0.5rem;
 }
-.card{
+.card {
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
 }
-h1{
+h1 {
     font-size: 4rem;
 }
-.inscriptionForm{
+.inscriptionForm {
     padding-bottom: 1.5rem;
 }
-.textSucces1{
+.textSucces1 {
     font-size: 3.5rem;
 }
-.textSucces2{
+.textSucces2 {
     font-size: 2rem;
 }
-.registerGood{
+.registerGood {
     max-width: 150rem;
 }

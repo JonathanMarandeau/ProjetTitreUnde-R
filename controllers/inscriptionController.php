@@ -20,9 +20,9 @@ $regexEmail = '/^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-
 // Regex pour le numéro de téléphone
 $regexPhoneNumber = '/^[0-9]{10,10}$/';
 // Regex pour le pseudo de l'utilisateur
-$regexPseudo = '/^[a-zA-Z0-9_]{3,30}$/';
+$regexPseudo = '/^[a-zA-Z0-9_ ]{3,30}$/';
 
-// Création d'un tableau pour retranscrire les erreurs lord du remplissage du formulaire
+// Création d'un tableau pour retranscrire les erreurs lors du remplissage du formulaire
 $formError = array();
 
 // Variable addSuccess qui affichera un message si le formulaire est bien envoyé

@@ -1,54 +1,54 @@
 /*Image de background accueil du site */
-body{
+body {
     background-image: url('../images/studio_bg.jpg');
     height: auto;
 }
 /* LinkResume */
-.linkResume{
+.linkResume {
     width: 2rem;
     margin: 1rem;
 }
 /* Nom du site */
-.siteTitle{
+.siteTitle {
     text-align: center;
     color: white;
     padding-top: 8rem;
     font-family: 'Gugi', cursive;
 }
 /*Slogan*/
-.slogan{
+.slogan {
     padding-top: 50px;
 }
 /* Bouttons de connexion */
 .btn-connection{
     padding-top: 150px;
 }
-.btn{
+.btn {
     color: white;
     border: 2px solid white;
 }
-.btn:hover{
+.btn:hover {
     background-color: white;
     color: blue;
     border-color: white;
 }
 /* Footer */
-footer{
+footer {
     margin-top: 4.3rem;
 }
-.jumbotron{
+.jumbotron {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
     margin-bottom:0; 
     margin-top:2rem;
 }
 /* Modal */
-.modal-dialog{
+.modal-dialog {
     background-color: white;
 }
-.modal-content{
+.modal-content {
     background-color: black;
 }
-.btn-connect-modal{
+.btn-connect-modal {
     background-color: black;
 }

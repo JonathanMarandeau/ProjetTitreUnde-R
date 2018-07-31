@@ -11,8 +11,8 @@ class apqm_country extends database {
     }
     
     /**
-     * Je crée la méthode qui va me permettre d'afficher la liste des pays présent dans ma table country
      * LISTE DES PAYS
+     * Je crée la méthode qui va me permettre d'afficher la liste des pays présent dans ma table country 
      */
     public function getListCountry() {
         /*

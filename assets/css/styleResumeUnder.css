@@ -1,14 +1,13 @@
-body{
-    font-family: 'Gugi', cursive;
+body {     font-family: 'Gugi', cursive;
     color: white;
     background-image: url('../images/underBg.jpg');
 }
-h1{
+h1 {
     padding-top: 2rem;
     padding-bottom: 2rem; 
     font-size: 4rem;
 }
-p{
+p {
     font-size: 1.2rem;
 }
 .resumeUnder {
