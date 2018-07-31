@@ -23,7 +23,7 @@ include 'controllers/deleteController.php';
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
                 <a class="navbar-brand text-white" href="accueil.php">Unde'R</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>                
             </nav>

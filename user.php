@@ -15,7 +15,7 @@ session_start();
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
                 <a class="navbar-brand text-white" href="#">Unde'R</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -61,11 +61,7 @@ session_start();
                 </div>
                 <div class="col-sm-8">
                     <div class="publication presentation">
-                        <h2>TITRE DU CONTENU</h2>
-                        <h5>Date de publication, modifié le:</h5>
-                        <div class="content">le CONTENU</div>
-                        <p>Texte d'explication</p>
-                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                        <h2>AUCUN CONTENU POUR LE MOMENT</h2>                        
                     </div>
                     <div class="publication presentation">
                         <h2>TITRE DU CONTENU</h2>

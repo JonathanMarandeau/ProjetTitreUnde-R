@@ -18,7 +18,7 @@ include 'controllers/addContentController.php';
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
                 <a class="navbar-brand text-white" href="#">Unde'R</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -67,11 +67,17 @@ include 'controllers/addContentController.php';
                     <h1 class="text-center">Ajoute un contenu</h1>
                     <div class="publication presentation">
                         <form action="action" method="POST" enctype="multipart/form-data">
-                            <div class="row">
-                                <label for="selectContentType" class="offset-lg-3 col-lg-6">Type de contenu :</label>
+                             <div class="row">
+                                <label for="titleContent" class="titleSendForm offset-lg-1 col-lg-10">Titre :</label>
                             </div>
                             <div class="row">
-                                <select class="contentType offset-lg-3 col-lg-6" name="selectContentType">
+                                <input class="offset-lg-1 col-lg-10" type="text" name="titleContent" placeholder="Titre de ton contenu" />
+                            </div>
+                            <div class="row">
+                                <label for="selectContentType" class="titleSendForm offset-lg-1 col-lg-10">Type de contenu :</label>
+                            </div>
+                            <div class="row">
+                                <select class="contentType offset-lg-1 col-lg-10" name="selectContentType">
                                     <option selected disabled>Choix</option>
                                     <!-- Boucle qui va lire le tableau d'objet créé pour la liste des pays --> 
                                     <?php foreach ($getListContentType AS $listContentType) { ?>
@@ -80,28 +86,23 @@ include 'controllers/addContentController.php';
                                         <option value="<?= $listContentType->id ?>"><?= $listContentType->name ?></option>
                                     <?php } ?>
                                 </select>
-                            </div>
-                            <div class="row">
-                                <label for="titleContent" class="offset-lg-3 col-lg-6">Titre :</label>
-                            </div>
-                            <div class="row">
-                                <input class="offset-lg-3 col-lg-6" type="text" name="titleContent" placeholder="Titre de ton contenu" />
-                            </div>
+                            </div>                           
                             <!-- Si c'est un audio ou video -->
                             <div class="row">
-                                <label for="file" class="offset-lg-3 col-lg-6">Ton fichier :</label>
+                                <label for="file" class="titleSendForm offset-lg-1 col-lg-10">Ton fichier :</label>
                             </div>
                             <div class="row">
-                                <input type="file" class="offset-lg-3 col-lg-6" name="file" value="" />
+                                <input type="file" class="offset-lg-1 col-lg-10" name="file" value="" />
                             </div>
                             <!-- Si c'est un texte -->
                             <div class="row">
-                                <label for="contentText" class="offset-lg-3 col-lg-6">Ton Texte :</label>
+                                <label for="contentText" class="titleSendForm offset-lg-1 col-lg-10">Ton Texte :</label>
                             </div>
                             <div class="row">
-                                <textarea rows="4" class="offset-lg-3 col-lg-6">
-                                At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-                                </textarea>
+                                <textarea rows="4" class="offset-lg-1 col-lg-10" placeholder="Ecris ton texte ici"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <input class="btn btnSendContent" type="submit" name="sendContent" value="Ajouter" title="Ajoute ton contenu" />
                             </div>
                         </form>
                     </div                    

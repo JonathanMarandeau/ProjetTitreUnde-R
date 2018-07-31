@@ -2,7 +2,7 @@
 session_start();
 include 'models/database.php';
 include 'models/user.php';
-include 'controllers/acceuilConnexion.php';
+include 'controllers/accueilConnexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -20,7 +20,7 @@ include 'controllers/updateProfilController.php';
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
                 <a class="navbar-brand text-white" href="#">Unde'R</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -40,10 +40,21 @@ include 'controllers/updateProfilController.php';
             </nav>
         </header>
         <div class="container text-white">
-
             <!-- Si le formulaire a bien été envoyé, je le notifie a l'utilisateur -->
             <?php if ($updateSuccess) { ?>
-                <p>Modifications effectuées !</p>    
+                <div class="container text-white">
+                    <h1 class="text-center">Modifications effectuées !</h1>                         
+                    <div class="inscriptionForm">
+                        <div class="container">
+                            <div class="card">                        
+                                <p class="text-center">Tu peu maintenant retourner sur ton profil.</p>                 
+                            </div> 
+                            <div class="text-center buttonReturn">                                
+                                <a class="btn btnUpdateForm" href="user.php" title="Retourne sur ton profil" role="button">Retour</a>
+                            </div>
+                        </div>                     
+                    </div>    
+                </div>                   
             <?php } else { ?>
                 <form action="updateProfil.php" method="POST">                
                     <div class="inscriptionForm">

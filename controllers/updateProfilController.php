@@ -134,6 +134,12 @@ if (isset($_POST['choiceCountry'])) {
         $formError['sendUpdateForm'] = 'L\'envoie du formulaire à échoué';
     } else {
         $updateSuccess = true;
+        // Je récupère tous les nouveaux attribut via le post (mise a jour des variables de sessions sans avoir a se reconnecter)
+        $user->userName = $_POST['userName'];
+        $user->getUserByUserName();
+        $_SESSION['nameCategory'] = $user->nameCategory;
+        $_SESSION['userName'] = $user->userName;
+        $_SESSION['nameCountry'] = $user->nameCountry;
     }
 }
 
