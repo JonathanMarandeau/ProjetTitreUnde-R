@@ -1,9 +1,7 @@
 // Fonction qui permet d'afficher ma fenêtre modal
 $(function(){
-    
-// Javascript pour la fenetre modal 
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
+
+// Permet d'afficher la modal au chargement de la page
+$('#modalError').modal('toggle');
 
 });

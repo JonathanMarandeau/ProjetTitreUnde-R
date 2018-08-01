@@ -32,13 +32,15 @@ include 'controllers/accueilConnexion.php';
                 </div>
                 <div class="text-center btn-connection">
                     <!-- Boutton pour ouvrir la fenetre modal -->
-                    <button type="button" class="btn btn-outline-primary btn-connect btn-lg" data-toggle="modal" data-target="#modalConnect">Connection</button>
+                    <!-- Je cible via une ternaire le data-target (si il y'a une erreur on ouvre la modal erreur sinon n ouvre la modal classique) -->
+                    <button type="button" class="btn btn-outline-primary btn-connect btn-lg" data-toggle="modal" data-target="<?= isset($formError['connexion']) ? '#modalError' : '#modalConnect' ?>">Connection</button>
                     <a class="btn btn-outline-primary btn-firstVisit btn-lg" href="register.php" title="Créer un compte" role="button">Inscris Toi</a>
                 </div>
                 <!-- Fenetre modale -->
                 <!-- Contenue du modal -->
                 <form action="accueil.php" method="POST">
-                    <div class="modal fade" id="modalConnect" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <!-- La ternaire permet d'afficher la modal au rafraichissement de la page si les données rentré ne sont pas bonne -->
+                    <div class="modal fade" id="<?= isset($formError['connexion']) ? 'modalError' : 'modalConnect' ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -71,10 +73,10 @@ include 'controllers/accueilConnexion.php';
             <div class="jumbotron text-center">
                 <p class="text-white">&copy; 2018. UNDE'R. All rights reserved.</p>
             </div>
-        </footer>
-        <script src="javascriptAccueil.js"></script> 
+        </footer>         
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="assets/javascript/javascriptAccueil.js"></script>
     </body>
 </html>

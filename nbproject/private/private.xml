@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>addContent.php</url>
+            <bookmark id="2">
+                <name/>
+                <line>101</line>
+                <key/>
+            </bookmark>
+        </file>
         <file>
             <url>accueil.php</url>
             <bookmark id="1">
@@ -12,10 +20,17 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/jonathan/Documents/ProjetTitre/controllers/updateProfilController.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/assets/css/styleUser.css</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/models/user.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/updateProfil.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/logout.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/resumeUnder.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/user.php</file>
             <file>file:/home/jonathan/Documents/ProjetTitre/addContent.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/controllers/addContentController.php</file>
             <file>file:/home/jonathan/Documents/ProjetTitre/register.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/controllers/inscriptionController.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/deleteConfirm.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/accueil.php</file>
         </group>
     </open-files>
 </project-private>
