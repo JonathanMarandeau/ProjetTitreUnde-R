@@ -13,24 +13,18 @@
             <url>accueil.php</url>
             <bookmark id="1">
                 <name/>
-                <line>58</line>
+                <line>60</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/jonathan/Documents/ProjetTitre/controllers/updateProfilController.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/assets/css/styleUser.css</file>
             <file>file:/home/jonathan/Documents/ProjetTitre/models/user.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/updateProfil.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/logout.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/resumeUnder.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/user.php</file>
             <file>file:/home/jonathan/Documents/ProjetTitre/addContent.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/register.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/deleteConfirm.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/accueil.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/controllers/addContentController.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/controllers/inscriptionController.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/models/content.php</file>
         </group>
     </open-files>
 </project-private>
