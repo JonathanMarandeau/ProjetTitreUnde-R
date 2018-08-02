@@ -86,7 +86,14 @@ include 'controllers/addContentController.php';
                                         <option value="<?= $listContentType->id ?>"><?= $listContentType->name ?></option>
                                     <?php } ?>
                                 </select>
-                            </div>                           
+                            </div> 
+                            <!-- DESCRIPTION -->
+                            <div class="row">
+                                <label for="contentText" class="titleSendForm offset-lg-1 col-lg-10">Description :</label>
+                            </div>
+                            <div class="row">
+                                <textarea rows="4" class="offset-lg-1 col-lg-10" placeholder="Ecris ton texte ici"></textarea>
+                            </div>
                             <!-- Si c'est un audio ou video -->
                             <div class="row">
                                 <label for="file" class="titleSendForm offset-lg-1 col-lg-10">Ton fichier :</label>

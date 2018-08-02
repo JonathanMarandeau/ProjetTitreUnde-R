@@ -2,6 +2,7 @@ body {
     font-family: 'Gugi', cursive;
     color: white;
     background-image: url('../images/underBg.jpg');
+    background-attachment: fixed;
 }
 h1 {
     padding-top: 2rem;
@@ -12,14 +13,23 @@ p {
     font-size: 1.2rem;
 }
 .resumeUnder {
-    background-color: black;
+    margin-top: 1rem;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
 }
-.card-body {
-    background-color: black;
+.card {
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
 }
-.card-img-top {
-    background-color: black;
-}
+
 .card-title {
     text-decoration: underline;
+}
+
+.card-img-top {
+    padding: 2rem;
+}
+
+.card-deck {
+    margin: 1rem;
 }

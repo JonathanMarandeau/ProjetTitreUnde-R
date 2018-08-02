@@ -33,7 +33,7 @@ include 'controllers/accueilConnexion.php';
                 <div class="text-center btn-connection">
                     <!-- Boutton pour ouvrir la fenetre modal -->
                     <!-- Je cible via une ternaire le data-target (si il y'a une erreur on ouvre la modal erreur sinon n ouvre la modal classique) -->
-                    <button type="button" class="btn btn-outline-primary btn-connect btn-lg" data-toggle="modal" data-target="<?= isset($formError['connexion']) ? '#modalError' : '#modalConnect' ?>">Connection</button>
+                    <button type="button" class="btn btn-outline-primary btn-connect btn-lg" data-toggle="modal" data-target="<?= isset($formError['connexion']) ? '#modalError' : '#modalConnect' ?>">Connexion</button>
                     <a class="btn btn-outline-primary btn-firstVisit btn-lg" href="register.php" title="Créer un compte" role="button">Inscris Toi</a>
                 </div>
                 <!-- Fenetre modale -->
@@ -60,7 +60,7 @@ include 'controllers/accueilConnexion.php';
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary btn-connect-modal" name="btnCloseModal" data-dismiss="modal">Fermer</button>
-                                    <button type="submit" class="btn btn-secondary btn-connect-modal" name="btnConnexion">Connection</button>                                    
+                                    <button type="submit" class="btn btn-secondary btn-connect-modal" name="btnConnexion">Connexion</button>                                    
                                 </div>
                             </div>
                         </div>
