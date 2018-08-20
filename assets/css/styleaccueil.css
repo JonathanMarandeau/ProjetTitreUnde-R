@@ -34,7 +34,7 @@ body {
 }
 /* Footer */
 footer {
-    margin-top: 4.3rem;
+    margin-top: 5.8rem;
 }
 .jumbotron {
     background-color: rgba(0, 0, 0, 0.5);
@@ -51,4 +51,21 @@ footer {
 }
 .btn-connect-modal {
     background-color: black;
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/* Pour avoir le boutton de la navbar en responsive */
+.custom-toggler.navbar-toggler {
+    border-color: rgba(255, 255, 255, 1);
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+/* Boutton de fermeture de la modal */
+.close {
+    color: red;
+}
+.close:hover {
+    color: blue;
 }

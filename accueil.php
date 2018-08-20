@@ -14,17 +14,29 @@ include 'controllers/accueilConnexion.php';
         <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet" />
         <link rel="stylesheet" href="assets/css/styleaccueil.css" />
     </head>
-    <body>       
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10">
-                    <a href="resumeUnder.php"><img src="assets/images/iconsResume/question-mark.png" alt="point d'interogation" class="linkResume" /></a>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="resumeUnder.php"><img src="assets/images/iconsResume/question-mark.png" alt="point d'interogation" class="linkResume" /></a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href=""><img src="assets/images/iconsResume/iconFacebook.png" alt="icon Facebook" class="linkResume" /></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href=""><img src="assets/images/iconsResume/iconTwitter.png" alt="icon Twitter" class="linkResume" /></a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-2">
-                    <a href=""><img src="assets/images/iconsResume/iconFacebook.png" alt="icon Facebook" class="linkResume" /></a>
-                    <a href=""><img src="assets/images/iconsResume/iconTwitter.png" alt="icon Twitter" class="linkResume" /></a>
-                </div>
-            </div>
+            </nav>
+        </header>
+        <div class="container">            
             <div class="siteTitle">
                 <h1>UNDE'R</h1>
                 <div class="slogan">
@@ -51,8 +63,8 @@ include 'controllers/accueilConnexion.php';
                                 </div>
                                 <div class="modal-body">
                                     <p class="siteNameModal">UNDE'R</p>
-                                    <p><input type="text" name="userName" placeholder="Ton pseudo"></p>
-                                    <p><input type="password" name="password" placeholder="Mot de passe"></p>
+                                    <p><input class="form-control" type="text" name="userName" placeholder="Ton pseudo"></p>
+                                    <p><input class="form-control" type="password" name="password" placeholder="Mot de passe"></p>
                                     <p class="text-danger"><?= isset($formError['connexion']) ? $formError['connexion'] : '' ?></p>
                                 </div>
                                 <div class="passwordLost">
