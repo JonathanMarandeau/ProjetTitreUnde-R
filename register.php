@@ -10,7 +10,7 @@ include 'controllers/inscriptionController.php';
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Inscrivez-Vous</title>
+        <title>Inscris Toi</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet" />
         <link rel="stylesheet" href="assets/css/styleInscription.css" />
@@ -19,15 +19,15 @@ include 'controllers/inscriptionController.php';
         <!-- Création du formulaire d'inscription -->
         <form action="register.php" method="POST">
             <h1 class="text-center">UNDE'R</h1>
-            <p class="text-center descriptionForm">Inscrivez-vous pour voir le contenu des artistes</p>
+            <p class="text-center descriptionForm">Inscris toi pour voir le contenu des artistes</p>
             <div class="container">
                 <!-- Si le formulaire a bien été envoyé, on le notifie a l'utilisateur -->
                 <?php if ($addSuccess) { ?>
                     <div class="card text-white bg-success mb-3 registerGood">
                         <div class="card-body text-center">
                             <p class="card-text textSucces1"><strong>Super !</strong></p>
-                            <p class="textSucces2">Tu fais maintenant parti de l'équipe !</p>
-                            <p class="textSucces2">Retourne à l'accueil, connecte-toi et va tcheker les contenus qui t'intéresse. </p>
+                            <p class="textSucces2">Tu fais maintenant parti de l'equipe !</p>
+                            <p class="textSucces2">Retourne à l'accueil, connecte-toi et va tcheker les contenus qui t'interesse. </p>
                         </div>
                     </div>
                     <div class="row">
@@ -52,7 +52,7 @@ include 'controllers/inscriptionController.php';
                                         </div>
                                         <!-- PRENOM -->
                                         <div class="row">
-                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="firstname" id="firstname" placeholder="Ton prénom" value="<?= isset($user->firstname) ? $user->firstname : '' ?>" />
+                                            <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="firstname" id="firstname" placeholder="Ton prenom" value="<?= isset($user->firstname) ? $user->firstname : '' ?>" />
                                             <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['firstname']) ? $formError['firstname'] : '' ?></p>
                                         </div>
                                         <!-- EMAIL -->
@@ -69,8 +69,8 @@ include 'controllers/inscriptionController.php';
                                         <div class="row col-lg-6 offset-lg-4">
                                             <div class="titleCountry "><label for="choiceCountry">Ton pays :</label></div>
                                         </div>
-                                        <div class="row col-lg-6 offset-lg-4">
-                                            <select class="country" name="choiceCountry">
+                                        <div class="row col-lg-6 offset-lg-3">
+                                            <select class="country form-control" name="choiceCountry">
                                                 <option selected disabled>Choix</option>
                                                 <!-- Boucle qui va lire le tableau d'objet créé pour la liste des pays --> 
                                                 <?php foreach ($getListCountry AS $listCountry) { ?>
@@ -79,7 +79,7 @@ include 'controllers/inscriptionController.php';
                                                     <option value="<?= $listCountry->id ?>"><?= $listCountry->name ?></option>
                                                 <?php } ?>
                                             </select>
-                                            <p class="text-danger"><?= isset($formError['choiceCountry']) ? $formError['choiceCountry'] : '' ?></p>
+                                            <p class="text-danger offset-lg-1"><?= isset($formError['choiceCountry']) ? $formError['choiceCountry'] : '' ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -105,8 +105,8 @@ include 'controllers/inscriptionController.php';
                                         <div class="row col-lg-6 offset-lg-4">
                                             <div class="titleStatus"><label for="choiceCategory">Tu es ici pour :</label></div>
                                         </div>
-                                        <div class="row col-lg-6 offset-lg-4">
-                                            <select class="status" name="choiceCategory">
+                                        <div class="row offset-lg-3 col-lg-6">
+                                            <select class="status form-control" name="choiceCategory">
                                                 <option selected disabled>Choix</option>
                                                 <!-- Boucle qui va lire le tableau d'objet créé pour la liste des types d'utilisateurs --> 
                                                 <?php foreach ($getListCategory AS $listCategory) { ?>

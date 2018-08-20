@@ -52,7 +52,7 @@ if (isset($_POST['firstname'])){
     // Si la variable firstname ne correspond pas à la regex
     if (!preg_match($regexName, $user->firstname)){
         // J'affiche l'erreur
-        $formError['firstname'] = '*Ton prénom ne doit contenir que des lettres';
+        $formError['firstname'] = '*Ton prenom ne doit contenir que des lettres';
    }
    // Si le post est vide
     if (empty($user->firstname)){
@@ -121,11 +121,11 @@ if (isset($_POST['choiceCategory'])) {
     $user->idCategory = $_POST['choiceCategory'];
     // Je vérifie que l'on récupère bien l'id du type d'utilisateur pour ne rien afficher d'autre (protection)
     if (is_nan($user->idCategory)) {
-        $formError['choiceCategory'] = '*Sélectionne uniquement un type d\'utilisateur de la liste';
+        $formError['choiceCategory'] = '*Selectionne uniquement un type d\'utilisateur de la liste';
     }
     // Si on envoi le formulaire et que la clé n'existe pas dans le post (pas selectionné le type d'utilisateur) j'affiche un message
-    } else if (isset($_POST['sendForm']) && !array_key_exists('choiceCountry', $_POST)) {
-        $formError['choiceCategory'] = '*Sélectionné un type d\'utilisateur';
+    } else if (isset($_POST['sendForm']) && !array_key_exists('choiceCategory', $_POST)) {
+        $formError['choiceCategory'] = '*Selectionne un type d\'utilisateur';
 }
 
 // PAYS
@@ -134,17 +134,17 @@ if (isset($_POST['choiceCountry'])) {
     $user->idCountry = $_POST['choiceCountry'];
     // Je vérifie que l'on récupère bien l'id du pays pour ne rien afficher d'autre (protection)
     if (is_nan($user->idCountry)) {
-        $formError['choiceCountry'] = '*Sélectionne uniquement un pays de la liste';
+        $formError['choiceCountry'] = '*Selectionne uniquement un pays de la liste';
     }
     // Si on envoi le formulaire et que la clé n'existe pas dans le post (pas selectionné le pays) j'affiche un message
     } else if (isset($_POST['sendForm']) && !array_key_exists('choiceCountry', $_POST)) {
-        $formError['choiceCountry'] = '*Sélectionne un pays';
+        $formError['choiceCountry'] = '*Selectionne un pays';
 }
 
 // Je vérifie que j'ai crée une entrée submit dans l'array $_POST, si présent on éxécute la méthode addUser()
   if (count($formError) == 0 && isset($_POST['sendForm'])){
     if (!$user->addUser()){
-        $formError['sendForm'] = 'l\'envoie du formulaire à échoué';
+        $formError['sendForm'] = 'l\'envoie du formulaire a echoue';
     } else {
         $addSuccess = true;
     }

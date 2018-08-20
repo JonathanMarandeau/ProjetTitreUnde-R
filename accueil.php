@@ -24,13 +24,13 @@ include 'controllers/accueilConnexion.php';
                     
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="resumeUnder.php"><img src="assets/images/iconsResume/question-mark.png" alt="point d'interogation" class="linkResume" /></a>
+                            <a class="nav-link text-white" href="resumeUnder.php" title="Qu'est-ce qu'Unde'R ?"><img src="assets/images/iconsResume/question-mark.png" alt="point d'interogation" class="linkResume" /></a>
                         </li>   
                         <li class="nav-item">
-                            <a class="nav-link text-white" href=""><img src="assets/images/iconsResume/iconFacebook.png" alt="icon Facebook" class="linkResume" /></a>
+                            <a class="nav-link text-white" href="" title="Notre Facebook"><img src="assets/images/iconsResume/iconFacebook.png" alt="icon Facebook" class="linkResume" /></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href=""><img src="assets/images/iconsResume/iconTwitter.png" alt="icon Twitter" class="linkResume" /></a>
+                            <a class="nav-link text-white" href="" title="Notre Twitter"><img src="assets/images/iconsResume/iconTwitter.png" alt="icon Twitter" class="linkResume" /></a>
                         </li>
                     </ul>
                 </div>
@@ -63,8 +63,8 @@ include 'controllers/accueilConnexion.php';
                                 </div>
                                 <div class="modal-body">
                                     <p class="siteNameModal">UNDE'R</p>
-                                    <p><input class="form-control" type="text" name="userName" placeholder="Ton pseudo"></p>
-                                    <p><input class="form-control" type="password" name="password" placeholder="Mot de passe"></p>
+                                    <p><input class="form-control offset-lg-2 col-lg-8" type="text" name="userName" placeholder="Ton pseudo"></p>
+                                    <p><input class="form-control offset-lg-2 col-lg-8" type="password" name="password" placeholder="Mot de passe"></p>
                                     <p class="text-danger"><?= isset($formError['connexion']) ? $formError['connexion'] : '' ?></p>
                                 </div>
                                 <div class="passwordLost">

@@ -12,13 +12,13 @@
         <div class="imgUnderBg">
             <div class="resumeUnder container text-center">
                 <h1>Qu'est-ce que Under'R ?</h1>
-                <p>Under'R est un réseau qui permet de mettre en relation direct les différents acteurs du milieu urbain.</p>
-                <p>L'idée de départ est d'aider les différents artistes à se mettre en relation direct pour pouvoir travailler ensemble.</p>
-                <p>Nous avons souhaité répondre à se problème a travers Under'R.</p>
-                <p>Pour beaucoup d'artistes, on ne sait pas où chercher des personnes capable de nous aider pour développer notre art.</p>
-                <p>Unde'R est donc la réponse immédiate à se problème.</p>
-                <p>Rien de mieux qu'un exemple pour mieux comprendre notre utilité direct.</p>
-                <p>Vous êtes un réalisateur de clip video. Vous êtes très doué dans votre domaine mais malheureusement, les videos de vos vacances avec mami n'intéresse pas grand monde. Vous êtes donc à la recherche d'un artiste, qui peu se rapprocher ou non de votre milieu, pour lui réaliser son clip vidéo. Et bien Unde'R vous permet de vous mettre en relation direct. Il recherche un réalisateur pour son clip, vous recherchez un artiste pour réaliser son clip.</p>
+                <p>Under'R est un reseau qui permet de mettre en relation direct les differents acteurs du milieu urbain.</p>
+                <p>L'idee de depart est d'aider les differents artistes à se mettre en relation direct pour pouvoir travailler ensemble.</p>
+                <p>Nous avons souhaite répondre à se probleme a travers Under'R.</p>
+                <p>Pour beaucoup d'artistes, on ne sait pas ou chercher des personnes capable de nous aider pour developper notre art.</p>
+                <p>Unde'R est donc la reponse immédiate à se probleme.</p>
+                <p>Rien de mieux qu'un exemple pour mieux comprendre notre utilite direct.</p>
+                <p>tu es un realisateur de clip video. Tu es tres doue dans ton domaine mais malheureusement, les videos de tes vacances avec mami n'intéresse pas grand monde. Tu es donc à la recherche d'un artiste, qui peu se rapprocher ou non de ton milieu, pour lui realiser son clip video. Et bien Unde'R te permet de te mettre en relation direct. Il recherche un realisateur pour son clip, tu recherche un artiste pour realiser son clip.</p>
             </div>
             <div class="container typeStyle">
                 <div class="row">
@@ -35,33 +35,37 @@
                                 <img class="card-img-top" src="assets/images/iconsResume/checked.png" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Certif'R</h5>
-                                    <p class="card-text">Ton truc à toi c'est simplement de chercher les perles rares ? Sa tombe bien, deviens donc un Certif'R et valide le contenue partagé sur le site.</p>
+                                    <p class="card-text">Ton truc a toi c'est simplement de chercher les perles rares ? Sa tombe bien, deviens donc un Certif'R et valide le contenue partagé sur le site.</p>
                                 </div>
                             </div>
                             <div class="card">
                                 <img class="card-img-top" src="assets/images/iconsResume/handshake.png" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Product'R</h5>
-                                    <p class="card-text">Tu as déjà les pieds dans le milieu et tu souhaites investir sur de nouveaux talents ? Deviens Product'R et fait évolué la carrière d'useUnde'R.</p>
+                                    <p class="card-text">Tu as deja les pieds dans le milieu et tu souhaites investir sur de nouveaux talents ? Deviens Product'R et fait evoluer la carriere d'un useUnde'R.</p>
                                 </div>
                             </div>
                             <div class="card">
                                 <img class="card-img-top" src="assets/images/iconsResume/microphone.png" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Rapp'R</h5>
-                                    <p class="card-text">Ton truc c'est d'écrire jusqu'à pas d'heures et mettre le tout sur une prod incroyable ? N'attends plus, deviens Rapp'R et partage ta musique !</p>
+                                    <p class="card-text">Ton truc c'est d'ecrire jusqu'a pas d'heures et mettre le tout sur une prod incroyable ? N'attends plus, deviens Rapp'R et partage ta musique !</p>
                                 </div>
                             </div>
                             <div class="card">
                                 <img class="card-img-top" src="assets/images/iconsResume/movie-symbol-of-video-camera.png" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Shoot'R</h5>
-                                    <p class="card-text">Le visuel c'est ton dada ? Et bien partage nous tes réalissations en devenant un Shoot'R et trouver de nouveau artistes a diriger sous ton angle.</p>
+                                    <p class="card-text">Le visuel c'est ton dada ? Et bien partage nous tes realissations en devenant un Shoot'R et trouver de nouveau artistes a diriger sous ton angle.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="bouttonsResume container text-center">
+                <a class="btn btnUpdateForm" href="accueil.php" title="Retourne à l'accueil" role="button">Retour</a>
+                <a class="btn btnUpdateForm" href="register.php" title="Inscris toi" role="button">S'inscrire</a>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
