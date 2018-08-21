@@ -89,9 +89,9 @@ if (isset($_POST['confirmPassword']) && empty($_POST['confirmPassword'])){
     
 // COMPARAISON PASSWORD ET HASCHAGE
 if (!empty($_POST['password']) && !empty($_POST['confirmPassword'])){
-    // Je vérifie que le password soit stritement égale au confimrPassword
+    // Je vérifie que le password soit strictement égale au confimrPassword
     if ($_POST['password'] === $_POST['confirmPassword']){
-        // Si cela correspond on hash le password (crypte)
+        // Si cela correspond, on hash le password (crypte)
         $user->password = password_hash($_POST['confirmPassword'], PASSWORD_DEFAULT);
     } else {
         // Sinon j'affiche un message d'erreur
@@ -99,7 +99,7 @@ if (!empty($_POST['password']) && !empty($_POST['confirmPassword'])){
     }
 }
 
-//E-MAIL
+// E-MAIL
 if (isset($_POST['mail'])){
     $user->mail = $_POST['mail'];
     if (empty($user->mail)){
@@ -107,7 +107,7 @@ if (isset($_POST['mail'])){
     }
 }
 
-//TELEPHONE
+// TELEPHONE
 if (isset($_POST['phone'])){
     $user->phone = $_POST['phone'];
     if (empty($user->phone)){
@@ -115,7 +115,7 @@ if (isset($_POST['phone'])){
     }
 }
 
-//PROFIL SUR LE SITE (TYPE D'UTILISATEUR) 
+// PROFIL SUR LE SITE (TYPE D'UTILISATEUR) 
 // Si le post existe alors
 if (isset($_POST['choiceCategory'])) {
     $user->idCategory = $_POST['choiceCategory'];
@@ -141,7 +141,7 @@ if (isset($_POST['choiceCountry'])) {
         $formError['choiceCountry'] = '*Selectionne un pays';
 }
 
-// Je vérifie que j'ai crée une entrée submit dans l'array $_POST, si présent on éxécute la méthode addUser()
+// Je vérifie que j'ai créé une entrée submit dans l'array $_POST, si présent j'éxécute la méthode addUser()
   if (count($formError) == 0 && isset($_POST['sendForm'])){
     if (!$user->addUser()){
         $formError['sendForm'] = 'l\'envoie du formulaire a echoue';
