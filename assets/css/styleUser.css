@@ -103,3 +103,11 @@ body {
 .presentation {
     padding: 1.5rem;
 }
+/* Lien Navbar actualite */
+.btnActuality {
+    color: white;
+}
+/* Lien Navbar actualite */
+.btnActuality:hover {
+    color: #ffcc00;
+}

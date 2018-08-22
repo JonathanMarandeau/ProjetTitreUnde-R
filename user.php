@@ -30,7 +30,7 @@ if (empty($_SESSION['userName'])){
                     </form>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Actualite</a>
+                            <a class="nav-link btnActuality" href="#">Actualite</a>
                         </li>   
                         <li class="nav-item">
                             <a class="nav-link btn btnDeconnect" type="button" href="logout.php">Deconnexion</a>
@@ -46,7 +46,7 @@ if (empty($_SESSION['userName'])){
                     <h2><?= $_SESSION['userName'] ?></h2>
                     <h3><?= $_SESSION['nameCategory'] ?></h3>
                     <p><?= $_SESSION['nameCountry'] ?></p>
-                    <h3>Liens des réseaux de la personne</h3>
+                    <h3>Liens des reseaux de la personne</h3>
                     <p>YouTube</p>
                     <p>Facebook</p>
                     <p>Twitter</p>

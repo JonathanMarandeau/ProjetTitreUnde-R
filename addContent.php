@@ -33,7 +33,7 @@ include 'controllers/addContentController.php';
                     </form>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Actualite</a>
+                            <a class="nav-link btnActuality" href="#">Actualite</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn btnDeconnect" type="button" href="logout.php">Deconnexion</a>
@@ -49,7 +49,7 @@ include 'controllers/addContentController.php';
                     <h2><?= $_SESSION['userName'] ?></h2>
                     <h3><?= $_SESSION['nameCategory'] ?></h3>
                     <p><?= $_SESSION['nameCountry'] ?></p>
-                    <h3>Liens des réseaux de la personne</h3>
+                    <h3>Liens des reseaux de la personne</h3>
                     <p>YouTube</p>
                     <p>Facebook</p>
                     <p>Twitter</p>
@@ -104,7 +104,7 @@ include 'controllers/addContentController.php';
                                 <label for="file" class="titleSendForm offset-lg-1 col-lg-10">Ton fichier :</label>
                             </div>
                             <div class="row">
-                                <input type="file" class="offset-lg-1 col-lg-10" name="file" value="" />
+                                <input type="file" class="offset-lg-1 col-lg-10 form-control-file" name="file" value="" />
                             </div>
                             <!-- Si c'est un texte -->
                             <div class="row">

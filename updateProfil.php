@@ -35,7 +35,7 @@ include 'controllers/updateProfilController.php';
                     </form>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Actualite</a>
+                            <a class="nav-link btnActuality" href="#">Actualite</a>
                         </li>   
                         <li class="nav-item">
                             <a class="nav-link btn btnDeconnect" type="button" href="logout.php">Deconnexion</a>
