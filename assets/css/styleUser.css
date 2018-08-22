@@ -41,14 +41,12 @@ body {
     color: #ff0000;
     border-color: #ff0000;
 }
-.btnDeconnect {
-    background-color: #ff0000;
-    color: white;
-    border-color: white;
+.btnDeconnect {    
+    color: red;
 }
 .btnDeconnect:hover {
-    background-color: white;
-    color: #ff0000;
+    background-color: red;
+    color: white;
     border-color: #ff0000;
 }
 .btnSearch {
@@ -101,4 +99,7 @@ body {
 /* Titre des input du form d'ajout de contenu */
 .titleSendForm {
     font-size: 1.5rem;
+}
+.presentation {
+    padding: 1.5rem;
 }

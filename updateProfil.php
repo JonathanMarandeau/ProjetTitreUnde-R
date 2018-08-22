@@ -1,5 +1,10 @@
 <?php
+// J'utilise le session_start pour utiliser les variables de session
 session_start();
+// Je m'assure que la session d'utilisateur est active sinon je redirige vers la page forbidden.php
+if (empty($_SESSION['userName'])){
+    header("Location: http://projettitre/forbidden.php");
+}
 include 'models/database.php';
 include 'models/user.php';
 include 'models/category.php';
@@ -30,10 +35,10 @@ include 'controllers/updateProfilController.php';
                     </form>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Actualité</a>
+                            <a class="nav-link text-white" href="#">Actualite</a>
                         </li>   
                         <li class="nav-item">
-                            <a class="nav-link btn btnDeconnect" type="button" href="logout.php">Déconnexion</a>
+                            <a class="nav-link btn btnDeconnect" type="button" href="logout.php">Deconnexion</a>
                         </li>
                     </ul>
                 </div>
@@ -43,7 +48,7 @@ include 'controllers/updateProfilController.php';
             <!-- Si le formulaire a bien été envoyé, je le notifie a l'utilisateur -->
             <?php if ($updateSuccess) { ?>
                 <div class="container text-white">
-                    <h1 class="text-center">Modifications effectuées !</h1>                         
+                    <h1 class="text-center">Modifications effectuees !</h1>                         
                     <div class="inscriptionForm">
                         <div class="container">
                             <div class="card">                        
@@ -73,7 +78,7 @@ include 'controllers/updateProfilController.php';
                                             </div>
                                             <!-- PRENOM -->
                                             <div class="row">
-                                                <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="firstname" id="firstname" placeholder="Ton prénom" value="<?= $user->firstname ?>" />
+                                                <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="firstname" id="firstname" placeholder="Ton prenom" value="<?= $user->firstname ?>" />
                                                 <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['firstname']) ? $formError['firstname'] : '' ?></p>
                                             </div>
                                             <!-- EMAIL -->
@@ -148,7 +153,7 @@ include 'controllers/updateProfilController.php';
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <p>Es-tu sûr de vouloir supprimer ton compte ?</p>
+                                                <p>Es-tu sur de vouloir supprimer ton compte ?</p>
                                             </div>
                                             <div class="modal-footer">
                                                 <a type="button" class="btn btnDeleteAccount" name="submitDeleteAccount" href="deleteConfirm.php?id=<?= $user->id ?>">Supprimer</a>
@@ -166,7 +171,7 @@ include 'controllers/updateProfilController.php';
                     <div class="card">
                         <div class="row">
                             <div class="card-body text-center">
-                                <p>Je ne vois pas ce que tu viens faire ici, mais si tu as réelement perdu la tête, tu peu supprimer ton compte définitivement !</p>                                    
+                                <p>Je ne vois pas ce que tu viens faire ici, mais si tu as reelement perdu la tete, tu peu supprimer ton compte definitivement !</p>                                    
                             </div>                                
                         </div> 
                         <div class="text-center">

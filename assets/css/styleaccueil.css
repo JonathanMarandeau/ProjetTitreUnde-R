@@ -53,7 +53,7 @@ footer {
     background-color: black;
 }
 .navbar {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 /* Pour avoir le boutton de la navbar en responsive */
 .custom-toggler.navbar-toggler {

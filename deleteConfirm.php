@@ -33,8 +33,8 @@ include 'controllers/deleteController.php';
             <div class="inscriptionForm">
                 <div class="container">
                     <div class="card">                        
-                        <p class="text-center">La suppression de ton compte est effectué.</p> 
-                        <p class="text-center">N'hésite pas à revenir le plus tôt possible, tu nous manque déjà !</p>
+                        <p class="text-center">La suppression de ton compte est effectue.</p> 
+                        <p class="text-center">N'hesite pas a revenir le plus tôt possible, tu nous manque deja !</p>
                     </div> 
                     <div class="text-center buttonReturn">                                
                         <a class="btn btnUpdateForm" href="accueil.php" title="Retourne à l'acceuil" role="button">Acceuil</a>
