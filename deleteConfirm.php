@@ -37,7 +37,7 @@ include 'controllers/deleteController.php';
                         <p class="text-center">N'hesite pas a revenir le plus tôt possible, tu nous manque deja !</p>
                     </div> 
                     <div class="text-center buttonReturn">                                
-                        <a class="btn btnUpdateForm" href="accueil.php" title="Retourne à l'acceuil" role="button">Acceuil</a>
+                        <a class="btn btnUpdateForm" href="accueil.php" title="Retourne à l'acceuil" role="button">Accueil</a>
                     </div>
                 </div>                     
             </div>    
