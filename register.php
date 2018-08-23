@@ -27,7 +27,7 @@ include 'controllers/inscriptionController.php';
                         <div class="card-body text-center">
                             <p class="card-text textSucces1"><strong>Super !</strong></p>
                             <p class="textSucces2">Tu fais maintenant parti de l'equipe !</p>
-                            <p class="textSucces2">Retourne à l'accueil, connecte-toi et va tcheker les contenus qui t'interesse. </p>
+                            <p class="textSucces2">Retourne a l'accueil, connecte-toi et va tcheker les contenus qui t'interesse. </p>
                         </div>
                     </div>
                     <div class="row">

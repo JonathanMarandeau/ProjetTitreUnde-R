@@ -53,7 +53,7 @@ class apqm_user extends database {
      */
     public function checkFreeUserName() {
         // Je crée une variable pour avoir un résultat de requête en boolean initialisé a false
-        $queryGood = false;
+        $queryGoodUserName = false;
         // Je mets en place ma requête de vérification
         $query = 'SELECT COUNT(*) AS `userNameTaken` FROM `apqm_user` WHERE `userName` = :userName';
         // J'insert ma requête dans une variable en récupérant les attributs du parent
@@ -63,12 +63,12 @@ class apqm_user extends database {
         // Je mets ensuite en place une condition en fonction du résultat
         if ($getFreeUserName->execute()) {
             // Si la query s'execute alors je le transforme en tableau d'objet
-            $queryGood = $getFreeUserName->fetch(PDO::FETCH_OBJ);
+            $queryGoodUserName = $getFreeUserName->fetch(PDO::FETCH_OBJ);
         // Sinon
         } else {
-            $queryGood = false;
+            $queryGoodUserName = false;
         }
-        return $queryGood;
+        return $queryGoodUserName;
     }
     
     /**
@@ -78,7 +78,7 @@ class apqm_user extends database {
      */
     public function checkFreeMail() {
         // Je crée une variable pour avoir un résultat de requête en boolean initialisé a false
-        $queryGood = false;
+        $queryGoodMail = false;
         // Je mets en place ma requête de vérification
         $query = 'SELECT COUNT(*) AS `mailTaken` FROM `apqm_user` WHERE `mail` = :mail';
         // J'insert ma requête dans une variable en récupérant les attributs du parent
@@ -88,12 +88,12 @@ class apqm_user extends database {
         // Je mets ensuite en place une condition en fonction du résultat
         if ($getFreeMail->execute()) {
             // Si la query s'execute alors je le transforme en tableau d'objet
-            $queryGood = $getFreeMail->fetch(PDO::FETCH_OBJ);
+            $queryGoodMail = $getFreeMail->fetch(PDO::FETCH_OBJ);
         // Sinon
         } else {
-            $queryGood = false;
+            $queryGoodMail = false;
         }
-        return $queryGood;
+        return $queryGoodMail;
     }
 
     /**
