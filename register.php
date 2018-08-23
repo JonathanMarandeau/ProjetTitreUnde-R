@@ -43,7 +43,7 @@ include 'controllers/inscriptionController.php';
                             <div class="row">
                                 <div class="col-lg-6 col-md-12">
                                     <div class="card-body text-center">
-                                        <div class="h1 mt-0 title"><p>Informations</p></div>
+                                        <div class="h1 mt-0 title text-white"><p>Informations</p></div>
                                         <!-- NOM -->
                                         <div class="row">                                           
                                             <!-- La partie php permet de garder sur le formulaire ce qui a été rentré par l'utilisateur-->
@@ -67,7 +67,7 @@ include 'controllers/inscriptionController.php';
                                         </div>
                                         <!-- PAYS -->
                                         <div class="row col-lg-6 offset-lg-4">
-                                            <div class="titleCountry "><label for="choiceCountry">Ton pays :</label></div>
+                                            <div class="titleCountry text-white"><label for="choiceCountry">Ton pays :</label></div>
                                         </div>
                                         <div class="row col-lg-6 offset-lg-3">
                                             <select class="country form-control" name="choiceCountry">
@@ -85,7 +85,7 @@ include 'controllers/inscriptionController.php';
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="card-body text-center">
-                                        <div class="h1 mt-0 title">Identifiant</div>
+                                        <div class="h1 mt-0 title text-white">Identifiant</div>
                                         <!-- PSEUDO -->
                                         <div class="row">
                                             <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="userName" id="userName" placeholder="Ton pseudo" value="<?= isset($user->userName) ? $user->userName : '' ?>" />
@@ -103,7 +103,7 @@ include 'controllers/inscriptionController.php';
                                         </div>
                                         <!-- STATUS -->
                                         <div class="row col-lg-6 offset-lg-4">
-                                            <div class="titleStatus"><label for="choiceCategory">Tu es ici pour :</label></div>
+                                            <div class="titleStatus text-white"><label for="choiceCategory">Tu es ici pour : <a href="resumeUnder.php" title="Si tu as un doute"><img src="assets/images/iconsResume/question-mark.png" alt="point d'interogation" class="linkResume" /></a></label></div>
                                         </div>
                                         <div class="row offset-lg-3 col-lg-6">
                                             <select class="status form-control" name="choiceCategory">
@@ -121,8 +121,8 @@ include 'controllers/inscriptionController.php';
                                 </div>                                
                             </div>
                             <div class="text-center buttonSend">
-                                <input class="btn btn-dark" type="submit" name="sendForm" value="Valider" title="Valide ton inscription" />
-                                <a class="btn btn-dark" href="accueil.php" title="Retour à l'accueil" role="button">Retour</a>
+                                <input class="btn btn-dark btnSendForm" type="submit" name="sendForm" value="Valider" title="Valide ton inscription" />
+                                <a class="btn btn-dark btnSendForm" href="accueil.php" title="Retour à l'accueil" role="button">Retour</a>
                             </div>
                         </div>                      
                     </div>                     

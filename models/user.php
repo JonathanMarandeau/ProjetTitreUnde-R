@@ -45,6 +45,56 @@ class apqm_user extends database {
         // J'utilise la méthode execute() via un return
         return $addUserOnSite->execute();
     }
+    
+    /**
+     *  VERIFICATION QUE LE PSEUDO SOIT DISPONIBLE
+     *  Méthode qui va permettre de vérifier si un userName est disponible
+     *  @return Boolean 
+     */
+    public function checkFreeUserName() {
+        // Je crée une variable pour avoir un résultat de requête en boolean initialisé a false
+        $queryGood = false;
+        // Je mets en place ma requête de vérification
+        $query = 'SELECT COUNT(*) AS `userNameTaken` FROM `apqm_user` WHERE `userName` = :userName';
+        // J'insert ma requête dans une variable en récupérant les attributs du parent
+        $getFreeUserName = $this->database->prepare($query);
+        // J'attribue les valeurs via bindValue et je récupère les attributs de la classe via $this
+        $getFreeUserName->bindValue(':userName', $this->userName, PDO::PARAM_STR);
+        // Je mets ensuite en place une condition en fonction du résultat
+        if ($getFreeUserName->execute()) {
+            // Si la query s'execute alors je le transforme en tableau d'objet
+            $queryGood = $getFreeUserName->fetch(PDO::FETCH_OBJ);
+        // Sinon
+        } else {
+            $queryGood = false;
+        }
+        return $queryGood;
+    }
+    
+    /**
+     *  VERIFICATION QUE LE MAIL SOIT DISPONIBLE
+     *  Méthode qui va permettre de vérifier si un mail est disponible
+     *  @return Boolean 
+     */
+    public function checkFreeMail() {
+        // Je crée une variable pour avoir un résultat de requête en boolean initialisé a false
+        $queryGood = false;
+        // Je mets en place ma requête de vérification
+        $query = 'SELECT COUNT(*) AS `mailTaken` FROM `apqm_user` WHERE `mail` = :mail';
+        // J'insert ma requête dans une variable en récupérant les attributs du parent
+        $getFreeMail = $this->database->prepare($query);
+        // J'attribue les valeurs via bindValue et je récupère les attributs de la classe via $this
+        $getFreeMail->bindValue(':mail', $this->mail, PDO::PARAM_STR);
+        // Je mets ensuite en place une condition en fonction du résultat
+        if ($getFreeMail->execute()) {
+            // Si la query s'execute alors je le transforme en tableau d'objet
+            $queryGood = $getFreeMail->fetch(PDO::FETCH_OBJ);
+        // Sinon
+        } else {
+            $queryGood = false;
+        }
+        return $queryGood;
+    }
 
     /**
      *  CONNEXION D'UN UTILISATEUR - RÉCUPERATION DES DONNÉES D'UTILISATERUR
