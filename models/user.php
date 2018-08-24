@@ -113,7 +113,7 @@ class apqm_user extends database {
                 . 'ON `apqm_user`.`id_apqm_category` = `apqm_category`.`id`'
                 . 'LEFT JOIN `apqm_country`'
                 . 'ON `apqm_user`.`id_apqm_country` = `apqm_country`.`id`'
-                . ' WHERE `apqm_user`.`userName` = :userName';
+                . 'WHERE `apqm_user`.`userName` = :userName';
         // J'insert ma requête dans une variable en récupérant les attributs du parent
         $getUser = $this->database->prepare($query);
         // J'attribue les valeurs via bindValue et je récupère les attributs de la classe via $this
