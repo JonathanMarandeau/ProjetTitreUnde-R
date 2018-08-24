@@ -61,19 +61,32 @@ if (isset($_POST['firstname'])){
     }          
 }
 // UserName
+// Si le post est rempli alors
 if (isset($_POST['userName'])){
     // Variable lastname qui vérifie que les caractères speciaux soit converti en entité html (protection)
     $user->userName = htmlspecialchars($_POST['userName']);
+    // Je mets dans une variable ma méthode qui récupère les attributs
+    $freeUserName = $user->checkFreeUserName();
     // Si la variable lastname ne correspond pas à la regex
     if (!preg_match($regexPseudo, $user->userName)){
         // J'affiche l'erreur 
         $formError['userName'] = '*Ton pseudo n\'est pas valide !';
    }
+   // Vérification que le userName n'est pas déjà en BDD (pseudo déjà pris)
+   // Je notifie une erreur si la méthode n'est pas un objet
+    if (!is_object($freeUserName)){
+        $formError['userName'] = '*Un probleme est survenu.';
+   // Si c'est un objet mais que le pseudo est déjà pris, je le notifie
+    } else {
+        if ($freeUserName->userNameTaken){
+            $formError['userName'] = '*Ce pseudo est deja pris.';
+        }
+    }
    // Si le post userName n'est pas rempli (donc vide)
     if (empty($user->userName)){
         // J'affiche l'erreur 
         $formError['userName'] = '*Champs obligatoire';
-    }          
+    }
 }
 
 // PASSWORD
@@ -100,14 +113,28 @@ if (!empty($_POST['password']) && !empty($_POST['confirmPassword'])){
 }
 
 // E-MAIL
+// Si le post est rempli alors
 if (isset($_POST['mail'])){
     $user->mail = $_POST['mail'];
+    // Je mets dans une variable ma méthode qui récupère les attributs
+    $freeMail = $user->checkFreeMail();
+    // Vérification que le mail n'est pas déjà en BDD (mail déjà pris)
+   // Je notifie une erreur si la méthode n'est pas un objet
+    if (!is_object($freeMail)){
+        $formError['mail'] = '*Un probleme est survenu.';
+   // Si c'est un objet mais que le mail est déjà pris, je le notifie
+    } else {
+        if ($freeMail->mailTaken){
+            $formError['mail'] = '*Cette adresse est deja prise.';
+        }
+    }
     if (empty($user->mail)){
         $formError['mail'] = '*Champs obligatoire';
     }
 }
 
 // TELEPHONE
+// Si le post est rempli alors
 if (isset($_POST['phone'])){
     $user->phone = $_POST['phone'];
     if (empty($user->phone)){

@@ -90,6 +90,7 @@ include 'controllers/inscriptionController.php';
                                         <div class="row">
                                             <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="userName" id="userName" placeholder="Ton pseudo" value="<?= isset($user->userName) ? $user->userName : '' ?>" />
                                             <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['userName']) ? $formError['userName'] : '' ?></p>
+                                            
                                         </div>
                                         <!-- MOT DE PASSE -->
                                         <div class="row">
