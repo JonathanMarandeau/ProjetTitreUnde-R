@@ -32,7 +32,7 @@ include 'controllers/inscriptionController.php';
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <a class="btn btn-dark" href="accueil.php" role="button">Retour Acceuil</a>
+                            <a class="btn btn-dark btnSendForm" href="accueil.php" role="button">Retour Acceuil</a>
                         </div>
                     </div>
                 </div>

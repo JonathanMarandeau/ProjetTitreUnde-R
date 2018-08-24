@@ -64,8 +64,8 @@ footer {
 }
 /* Boutton de fermeture de la modal */
 .close {
-    color: red;
+    color: white;
 }
 .close:hover {
-    color: blue;
+    color: red;
 }
