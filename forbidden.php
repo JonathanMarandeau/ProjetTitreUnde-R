@@ -26,7 +26,7 @@
                         <p class="text-center">Si tu souhaite acceder au site, connecte toi ou rejoins nous en t'inscrivant !</p>
                     </div> 
                     <div class="text-center buttonReturn">                                
-                        <a class="btn btnUpdateForm" href="accueil.php" title="Retourne à l'acceuil" role="button">Accueil</a>
+                        <a class="btn btnUpdateForm" href="homePage.php" title="Retourne à l'acceuil" role="button">Accueil</a>
                     </div>
                 </div>                     
             </div>    

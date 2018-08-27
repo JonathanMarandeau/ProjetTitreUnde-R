@@ -64,8 +64,8 @@
                 </div>
             </div>
             <div class="bouttonsResume container text-center">
-                <a class="btn btnUpdateForm" href="accueil.php" title="Retourne à l'accueil" role="button">Retour</a>
-                <a class="btn btnUpdateForm" href="register.php" title="Inscris toi" role="button">S'inscrire</a>
+                <a class="btn btnUpdateForm" href="homePage.php" title="Retourne à l'accueil" role="button">Retour</a>
+                <a class="btn btnUpdateForm" href="registration.php" title="Inscris toi" role="button">S'inscrire</a>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

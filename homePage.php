@@ -2,7 +2,7 @@
 session_start();
 include 'models/database.php';
 include 'models/user.php';
-include 'controllers/accueilConnexion.php';
+include 'controllers/homePageConnexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -46,11 +46,11 @@ include 'controllers/accueilConnexion.php';
                     <!-- Boutton pour ouvrir la fenetre modal -->
                     <!-- Je cible via une ternaire le data-target (si il y'a une erreur on ouvre la modal erreur sinon n ouvre la modal classique) -->
                     <button type="button" class="btn btn-outline-primary btn-connect btn-lg" data-toggle="modal" data-target="<?= isset($formError['connexion']) ? '#modalError' : '#modalConnect' ?>">Connexion</button>
-                    <a class="btn btn-outline-primary btn-firstVisit btn-lg" href="register.php" title="Créer un compte" role="button">Inscris Toi</a>
+                    <a class="btn btn-outline-primary btn-firstVisit btn-lg" href="registration.php" title="Créer un compte" role="button">Inscris Toi</a>
                 </div>
                 <!-- Fenetre modale -->
                 <!-- Contenue du modal -->
-                <form action="accueil.php" method="POST">
+                <form action="homePage.php" method="POST">
                     <!-- La ternaire permet d'afficher la modal au rafraichissement de la page si les données rentré ne sont pas bonne -->
                     <div class="modal fade" id="<?= isset($formError['connexion']) ? 'modalError' : 'modalConnect' ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">

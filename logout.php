@@ -19,7 +19,7 @@ session_destroy();
     <body>
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
-                <a class="navbar-brand text-white" href="accueil.php">Unde'R</a>
+                <a class="navbar-brand text-white" href="homePage.php">Unde'R</a>
                 <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>                
@@ -33,7 +33,7 @@ session_destroy();
                         <p class="text-center">Deconnexion effectue avec succes</p>                 
                     </div> 
                     <div class="text-center buttonReturn">                                
-                        <a class="btn btnUpdateForm" href="accueil.php" title="Retourne à l'acceuil" role="button">Accueil</a>
+                        <a class="btn btnUpdateForm" href="homePage.php" title="Retourne à l'acceuil" role="button">Accueil</a>
                     </div>
                 </div>                     
             </div>    

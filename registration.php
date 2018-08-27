@@ -3,7 +3,7 @@ include 'models/database.php';
 include 'models/user.php';
 include 'models/category.php';
 include 'models/country.php';
-include 'controllers/inscriptionController.php';
+include 'controllers/registrationController.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,7 +17,7 @@ include 'controllers/inscriptionController.php';
     </head>
     <body>
         <!-- Création du formulaire d'inscription -->
-        <form action="register.php" method="POST">
+        <form action="registration.php" method="POST">
             <h1 class="text-center">UNDE'R</h1>
             <p class="text-center descriptionForm">Inscris toi pour voir le contenu des artistes</p>
             <div class="container">
@@ -32,7 +32,7 @@ include 'controllers/inscriptionController.php';
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <a class="btn btn-dark btnSendForm" href="accueil.php" role="button">Retour Acceuil</a>
+                            <a class="btn btn-dark btnSendForm" href="homePage.php" role="button">Retour Acceuil</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@ include 'controllers/inscriptionController.php';
                             </div>
                             <div class="text-center buttonSend">
                                 <input class="btn btn-dark btnSendForm" type="submit" name="sendForm" value="Valider" title="Valide ton inscription" />
-                                <a class="btn btn-dark btnSendForm" href="accueil.php" title="Retour à l'accueil" role="button">Retour</a>
+                                <a class="btn btn-dark btnSendForm" href="homePage.php" title="Retour à l'accueil" role="button">Retour</a>
                             </div>
                         </div>                      
                     </div>                     

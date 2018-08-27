@@ -70,7 +70,7 @@ if (empty($_SESSION['userName'])){
                     </div>
                     <div class="publication presentation">
                         <h2>TITRE DU CONTENU</h2>
-                        <h5>Date de publication, modifié le:</h5>
+                        <h5>Date de publication, modifie le:</h5>
                         <div class="content">le CONTENU</div>
                         <p>Texte d'explication</p>
                         <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
