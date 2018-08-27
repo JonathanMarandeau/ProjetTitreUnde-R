@@ -85,7 +85,7 @@ include 'controllers/inscriptionController.php';
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="card-body text-center">
-                                        <div class="h1 mt-0 title text-white">Identifiant</div>
+                                        <div class="h1 mt-0 title text-white"><p>Identifiant</p></div>
                                         <!-- PSEUDO -->
                                         <div class="row">
                                             <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="userName" id="userName" placeholder="Ton pseudo" value="<?= isset($user->userName) ? $user->userName : '' ?>" />

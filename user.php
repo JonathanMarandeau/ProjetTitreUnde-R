@@ -39,7 +39,7 @@ if (empty($_SESSION['userName'])){
                 </div>
             </nav>
         </header>
-        <div class="container text-white" style="margin-top:5rem;">
+        <div class="container text-white">
             <div class="row">
                 <div class="col-sm-4 presentation">
                     <div class="avatar">Mettre LAVATAR</div>                    
