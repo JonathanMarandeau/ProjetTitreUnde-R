@@ -20,11 +20,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/jonathan/Documents/ProjetTitre/models/user.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/addContent.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/register.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/controllers/inscriptionController.php</file>
-            <file>file:/home/jonathan/Documents/ProjetTitre/accueil.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/controllers/updateProfilController.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/updateProfil.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/registration.php</file>
+            <file>file:/home/jonathan/Documents/ProjetTitre/controllers/registrationController.php</file>
         </group>
     </open-files>
 </project-private>

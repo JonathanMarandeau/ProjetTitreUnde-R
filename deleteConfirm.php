@@ -1,13 +1,13 @@
 <?php
 // J'effectue un session_start pour utiliser les variables de session.
 session_start();
+include 'models/database.php';
+include 'models/user.php';
+include 'controllers/deleteController.php';
 // Je retire toutes les variables de session via un session_unset.
 session_unset();
 // Je detruis la session via un session_destroy.
 session_destroy();
-include 'models/database.php';
-include 'models/user.php';
-include 'controllers/deleteController.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,7 +37,7 @@ include 'controllers/deleteController.php';
                         <p class="text-center">N'hesite pas a revenir le plus tôt possible, tu nous manque deja !</p>
                     </div> 
                     <div class="text-center buttonReturn">                                
-                        <a class="btn btnUpdateForm" href="accueil.php" title="Retourne à l'acceuil" role="button">Accueil</a>
+                        <a class="btn btnUpdateForm" href="homePage.php" title="Retourne à l'acceuil" role="button">Accueil</a>
                     </div>
                 </div>                     
             </div>    

@@ -156,7 +156,7 @@ include 'controllers/updateProfilController.php';
                                                 <p>Es-tu sur de vouloir supprimer ton compte ?</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <a type="button" class="btn btnDeleteAccount" name="submitDeleteAccount" href="deleteConfirm.php?id=<?= $user->id ?>">Supprimer</a>
+                                                <a type="button" class="btn btnDeleteAccount" name="submitDeleteAccount" href="deleteConfirm.php">Supprimer</a>
                                                 <button type="button" class="btn btnUpdateForm" data-dismiss="modal">Retour</button>
                                             </div>
                                         </div>
