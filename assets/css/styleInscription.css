@@ -9,7 +9,7 @@ body {
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.8);
 }
-p {
+.columnName {
     font-size: 1.7rem;
 }
 h1 {
@@ -19,13 +19,16 @@ h1 {
     padding-bottom: 1.5rem;
 }
 .textSucces1 {
-    font-size: 3.5rem;
+    font-size: 1.5rem;
 }
 .textSucces2 {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 .registerGood {
-    max-width: 150rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    max-width: 100rem;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .linkResume {
     width: 1.5rem;

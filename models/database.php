@@ -7,7 +7,7 @@ class database {
     public function __construct() {
         // J'essaye de me connecter en instanciant un nouvelle objet PDO 
         try {
-            $this->database = new PDO('mysql:host=localhost;dbname=under;charset=utf8', 'root', 'Ibrahimovic7');
+            $this->database = new PDO('mysql:host=localhost;dbname=under;charset=utf8', 'under', 'under');
             // "J'attrape" l'exception et j'arrête le script PHP
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage()); // Message d'erreur

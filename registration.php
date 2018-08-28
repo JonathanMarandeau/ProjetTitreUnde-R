@@ -23,18 +23,16 @@ include 'controllers/registrationController.php';
             <div class="container">
                 <!-- Si le formulaire a bien été envoyé, on le notifie a l'utilisateur -->
                 <?php if ($addSuccess) { ?>
-                    <div class="card text-white bg-success mb-3 registerGood">
+                    <div class="card text-white mb-3 registerGood">
                         <div class="card-body text-center">
                             <p class="card-text textSucces1"><strong>Super !</strong></p>
                             <p class="textSucces2">Tu fais maintenant parti de l'equipe !</p>
                             <p class="textSucces2">Retourne a l'accueil, connecte-toi et va tcheker les contenus qui t'interesse. </p>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <a class="btn btn-dark btnSendForm" href="homePage.php" role="button">Retour Acceuil</a>
-                        </div>
-                    </div>
+                    </div>                    
+                    <div class="text-center">
+                        <a class="btn btn-dark btnSendForm" href="homePage.php" role="button">Retour Acceuil</a>
+                    </div>                    
                 </div>
             <?php } else { ?>
                 <div class="inscriptionForm">
@@ -43,7 +41,7 @@ include 'controllers/registrationController.php';
                             <div class="row">
                                 <div class="col-lg-6 col-md-12">
                                     <div class="card-body text-center">
-                                        <div class="h1 mt-0 title text-white"><p>Informations</p></div>
+                                        <div class="h1 mt-0 title text-white"><p class="columnName">Informations</p></div>
                                         <!-- NOM -->
                                         <div class="row">                                           
                                             <!-- La partie php permet de garder sur le formulaire ce qui a été rentré par l'utilisateur-->
@@ -85,12 +83,12 @@ include 'controllers/registrationController.php';
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="card-body text-center">
-                                        <div class="h1 mt-0 title text-white"><p>Identifiant</p></div>
+                                        <div class="h1 mt-0 title text-white"><p class="columnName">Identifiant</p></div>
                                         <!-- PSEUDO -->
                                         <div class="row">
                                             <input class="col-lg-6 offset-lg-3 col-md-12" type="text" name="userName" id="userName" placeholder="Ton pseudo" value="<?= isset($user->userName) ? $user->userName : '' ?>" />
                                             <p class="text-danger col-lg-6 offset-lg-3 col-md-12"><?= isset($formError['userName']) ? $formError['userName'] : '' ?></p>
-                                            
+
                                         </div>
                                         <!-- MOT DE PASSE -->
                                         <div class="row">

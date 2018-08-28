@@ -44,7 +44,7 @@ include 'controllers/homePageConnexion.php';
                 </div>
                 <div class="text-center btn-connection">
                     <!-- Boutton pour ouvrir la fenetre modal -->
-                    <!-- Je cible via une ternaire le data-target (si il y'a une erreur on ouvre la modal erreur sinon n ouvre la modal classique) -->
+                    <!-- Je cible via une ternaire le data-target (si il y'a une erreur on ouvre la modal erreur sinon on ouvre la modal classique) -->
                     <button type="button" class="btn btn-outline-primary btn-connect btn-lg" data-toggle="modal" data-target="<?= isset($formError['connexion']) ? '#modalError' : '#modalConnect' ?>">Connexion</button>
                     <a class="btn btn-outline-primary btn-firstVisit btn-lg" href="registration.php" title="Créer un compte" role="button">Inscris Toi</a>
                 </div>
