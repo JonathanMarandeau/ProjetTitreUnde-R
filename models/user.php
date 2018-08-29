@@ -145,7 +145,7 @@ class apqm_user extends database {
 
     /**
      *  MODIFICATION D'UN UTILISATEUR
-     *  Méthode qui va permettre de modifier les données de l'utilisateur grâce au userName
+     *  Méthode qui va permettre de modifier les données de l'utilisateur grâce a l'id
      */
     public function updateUserByUserId() {
         // Requête pour permettre à l'utilisateur de modifier ses données
